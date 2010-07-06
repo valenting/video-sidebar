@@ -1,0 +1,111 @@
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    http://www.w3.org/TR/html4/loose.dtd>
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head><title>VLC Embed</title></head>
+
+    <body>
+
+    <h1>VLC Embed</h1>
+    <div align="center">
+    <table>
+    <tr>
+    <td>
+    <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
+        width="300"
+        height="240"
+       autoplay="no"
+        id="vlc"
+       target="futurama.s06e03.hdtv.xvid-fqm.avi">
+    </embed>
+           
+
+    <div id="info"></div>
+    <br>
+    <input type="button" class="sed1" onclick="else_r();" size='30' value="Info" /><br>
+    <textarea id="txtout" rows="10" cols="45"></textarea>
+    </td>
+    <td>
+    <script type="text/javascript">
+
+       var vlc = document.getElementById("vlc");
+       if(vlc){
+          document.getElementById("info").innerHTML = "Ready";
+       } else {
+          document.getElementById("info").innerHTML = "Not Ready";
+       }
+       function mute(){
+          vlc.audio.toggleMute();
+       }
+       function play(){
+          vlc.playlist.play();
+          intval = setInterval(uptime, 250);
+       }
+       function stop(){
+          clearInterval(intval);
+          vlc.playlist.stop();
+
+       }
+       function pause(){   
+          vlc.playlist.togglePause();
+       }
+       function c_time(){
+          return eval(vlc.input.time / 1000);
+       }
+       function seek(value){
+       var vlc = document.getElementById("vlc");
+          //alert(value);
+          vlc.input.time = eval(value*1000)
+          //return true;
+       }
+       function backof(value){
+       var vlc = document.getElementById("vlc");
+          vlc.input.time = vlc.input.time - eval(value*1000);
+          //alert(vlc.input.state);
+          //return true;
+       }
+
+       function uptime(){
+          document.getElementById("nowt").innerHTML = eval(vlc.input.time/1000);
+       }
+       function else_r(){
+          oi = document.getElementById("txtout");
+          oi.value = '';
+          oi.value += vlc.versionInfo() +"\n";
+          oi.value += "VLC position " + vlc.input.position +"\n";
+          oi.value += "VLC length " + vlc.input.length +"\n";
+          oi.value += "VLC rate " + vlc.input.rate +"\n";
+          oi.value += "VLC is Playing " + vlc.playlist.isPlaying +"\n";
+       }
+	   
+	  
+    </script>
+    <br />
+       <input type="button" onclick='play();' value="Play" /><br>
+       <input type="button" onclick='pause();' value="Pause" /><br>
+       <input type="button" onclick='stop();' value="Stop" /><br>
+       <input type="button" onclick='document.getElementById("info").innerHTML = c_time();' value="Time" /><br>
+       <input type="button" onclick='mute();' value="Mute" /><br>
+       
+       <div>
+       
+       <input id="seekto" type="text" size="4" value="10" />
+       <input type="button" class="sed1" onclick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
+       
+       <br>
+       
+       <input id="backof" type="text" size="4" value="5" />
+       <input type="button" class="sed1" onclick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" />
+       
+       
+       </div>
+       <br>
+       
+       <div id="nowt"></div>
+       <br>
+    </td></tr>
+    </table>
+
+    </div>
+    </body>
+    </html>
+
