@@ -15,5 +15,6 @@ function shutdown() {
   // Sidebar is unloading
 }
 
+
 window.addEventListener("load", startup, false);
 window.addEventListener("unload", shutdown, false);
