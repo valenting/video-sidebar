@@ -9,23 +9,34 @@
     <div align="center">
     <table>
     <tr>
-    <td>
-    <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
+      <td colspan="2"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
         width="300"
         height="240"
        autoplay="no"
         id="vlc"
-       target="futurama.s06e03.hdtv.xvid-fqm.avi">
-    </embed>
-           
-
-    <div id="info"></div>
-    <br>
-    <input type="button" class="sed1" onclick="else_r();" size='30' value="Info" /><br>
-    <textarea id="txtout" rows="10" cols="45"></textarea>
-    </td>
-    <td>
-    <script type="text/javascript">
+       target="futurama.s06e03.hdtv.xvid-fqm.avi"> </embed></td>
+      </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="button" onClick='play();' value="Play" />        
+        <input type="button" onClick='pause();' value="Pause" />        
+        <input type="button" onClick='stop();' value="Stop" />        
+        <input type="button" onClick='mute();' value="Mute" />
+      </div></td>
+      </tr>
+    <tr>
+      <td width="163"><input id="seekto" type="text" size="4" value="10" />
+        <input type="button" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
+        <br>
+        <input id="backof" type="text" size="4" value="5" />
+      <input type="button" class="sed1" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>
+      <td width="123"><div id="nowt"></div></td>
+    </tr>
+    <tr>
+    <td colspan="2"><p align="center">
+      <input type="button" class="sed1" onClick="else_r();" size='30' value="Info" /><br>
+        <textarea id="txtout" rows="10" cols="32"></textarea>
+        <script type="text/javascript">
 
        var vlc = document.getElementById("vlc");
        if(vlc){
@@ -78,31 +89,10 @@
        }
 	   
 	  
-    </script>
-    <br />
-       <input type="button" onclick='play();' value="Play" /><br>
-       <input type="button" onclick='pause();' value="Pause" /><br>
-       <input type="button" onclick='stop();' value="Stop" /><br>
-       <input type="button" onclick='document.getElementById("info").innerHTML = c_time();' value="Time" /><br>
-       <input type="button" onclick='mute();' value="Mute" /><br>
-       
-       <div>
-       
-       <input id="seekto" type="text" size="4" value="10" />
-       <input type="button" class="sed1" onclick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
-       
-       <br>
-       
-       <input id="backof" type="text" size="4" value="5" />
-       <input type="button" class="sed1" onclick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" />
-       
-       
-       </div>
-       <br>
-       
-       <div id="nowt"></div>
-       <br>
-    </td></tr>
+        </script>
+        <br>
+    </p></td>
+    </tr>
     </table>
 
     </div>
