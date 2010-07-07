@@ -8,10 +8,7 @@
   <script src="ff-sidebar.js"/>
 
   <vbox flex="1">
-    <label value="Bla bla bla" />
-	<html:iframe src="file://D:/Download/test.html"> 
-	Hello
-    </html:iframe>
-	
+		<browser type="content" src="file://D:/Download/test.html" flex="1"/>
+	 
   </vbox>
   </page>
