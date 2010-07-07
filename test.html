@@ -1,0 +1,56 @@
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    http://www.w3.org/TR/html4/loose.dtd>
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head><title>VLC Embed</title></head>
+
+    <body>
+
+    <h1>VLC Embed</h1>
+    <div align="center">
+    <table>
+    <tr>
+      <td colspan="2"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
+        width="300"
+        height="240"
+       autoplay="no"
+        id="vlc"
+       target="file:///d:/poli/video-sidebar/test.avi"> </embed></td>
+      </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="button" onClick='play();' value="Play" />        
+        <input type="button" onClick='pause();' value="Pause" />        
+        <input type="button" onClick='stop();' value="Stop" />        
+        <input type="button" onClick='mute();' value="Mute" />
+		<input type="button" onClick='createplaylist();' value="Playlist" />
+		<input type="button" class="sed1" onClick="add_to_playlist();" size='30' value="Add" />
+		<textarea id="txtin" rows="1" cols="32"></textarea> 
+        <input type="button" onClick='next();' value="Next" />
+		<input type="button" onclick="getplaylist();" value="get playlist"/>
+      </div></td>
+      </tr>
+    <tr>
+      <td width="163"><input id="seekto" type="text" size="4" value="10" />
+        <input type="button" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
+        <br>
+        <input id="backof" type="text" size="4" value="5" />
+      <input type="button" class="sed1" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>
+      <td width="123"><div id="nowt"></div></td>
+    </tr>
+    <tr>
+    <td colspan="2"><p align="center">
+      <input type="button" class="sed1" onClick="else_r();" size='30' value="Info" /><br>
+        <textarea id="txtout" rows="10" cols="32"></textarea>
+        <script src="vlc-controls.js" />
+        <br>
+    </p></td>
+    </tr>
+    </table>
+
+    </div>
+	
+	<div id="playlist"></div>
+	
+    </body>
+    </html>
+
