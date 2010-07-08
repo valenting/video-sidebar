@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://Vali-test/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://Vali-test/locale/overlay.dtd">
+<overlay id="Vali-test-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <script src="ff-overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="Vali-test-strings" src="chrome://Vali-test/locale/overlay.properties"/>
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="Vali-test-hello" label="&Vali-test.label;"
+              oncommand="Vali-test.onMenuItemCommand(event);"/>
+  </menupopup>
+
+  <popup id="contentAreaContextMenu">
+    <menuitem id="context-Vali-test" label="&Vali-testContext.label;"
+              accesskey="&Vali-testContext.accesskey;"
+              insertafter="context-stop"
+              oncommand="Vali-test.onMenuItemCommand(event)"/>
+  </popup>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="Vali-test-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+    label="&Vali-testToolbarButton.label;" tooltiptext="&Vali-testToolbarButton.tooltip;"
+    oncommand="Vali-test.onToolbarButtonCommand()"/>
+  </toolbarpalette>
+
+  <toolbox id="navigator-toolbox">
+    <toolbar class="chromeclass-toolbar" toolbarname="&Vali-testToolbar.name;" customizable="true" id="Vali-test-toolbar">
+      <label value="&Vali-testToolbar.label;"/>
+    </toolbar>
+  </toolbox>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openSidebar_Vali-test" observes="viewSidebar_Vali-test" />
+  </menupopup>
+
+  <keyset id="mainKeyset">
+    <key key="q" id="key_openSidebar_Vali-test" command="viewSidebar_Vali-test" />
+  </keyset>
+
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewSidebar_Vali-test"
+                 label="&Vali-testSidebar.label;"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://Vali-test/content/ff-sidebar.xul"
+                 sidebartitle="&Vali-testSidebar.label;"
+                 oncommand="toggleSidebar('viewSidebar_Vali-test');" />
+  </broadcasterset>
+
+</overlay>
