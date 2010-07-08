@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://testaddon7/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://testaddon7/locale/overlay.dtd">
+<overlay id="testaddon7-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <script src="ff-overlay.js"/>
+  <script src="controls.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="testaddon7-strings" src="chrome://testaddon7/locale/overlay.properties"/>
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="testaddon7-hello" label="&testaddon7.label;"
+              oncommand="testaddon7.onMenuItemCommand(event);"/>
+  </menupopup>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="testaddon7-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+    label="&testaddon7ToolbarButton.label;" tooltiptext="&testaddon7ToolbarButton.tooltip;"
+    oncommand="testaddon7.onToolbarButtonCommand()"/>
+  </toolbarpalette>
+
+  <toolbox id="navigator-toolbox">
+    <toolbar class="chromeclass-toolbar" toolbarname="&testaddon7Toolbar.name;" customizable="true" id="testaddon7-toolbar">
+      <label value="&testaddon7Toolbar.label;"/>
+    </toolbar>
+  </toolbox>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openSidebar_testaddon7" observes="viewSidebar_testaddon7" />
+  </menupopup>
+
+  <keyset id="mainKeyset">
+    <key key="s" modifiers="shift" id="key_openSidebar_testaddon7" command="viewSidebar_testaddon7" />
+  </keyset>
+
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewSidebar_testaddon7"
+                 label="&testaddon7Sidebar.label;"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://testaddon7/content/ff-sidebar.xul"
+                 sidebartitle="&testaddon7Sidebar.label;"
+                 oncommand="toggleSidebar('viewSidebar_testaddon7');" />
+  </broadcasterset>
+ 
+ <statusbar>
+	<statusbarpanel label="VLC Left Status Bar Panel">
+		<button label="Play" id="play" onclick='play();'/>
+		<button label="Pause" id="pause" />
+		<button label="Stop" id="stop" />
+		<button label="Next" id="next" />
+		<button label="Prev" id="prev" />
+	</statusbarpanel>
+	<spacer flex="1"/>
+	<progressmeter mode="determined" value="82"/>
+	<statusbarpanel label="VLC Right Status Bar Panel"/>
+</statusbar>
+
+</overlay>
+
