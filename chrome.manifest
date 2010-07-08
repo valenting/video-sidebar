@@ -1,0 +1,8 @@
+content   testaddon7                 chrome/content/
+skin      testaddon7   classic/1.0   chrome/skin/
+locale    testaddon7   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://testaddon7/content/ff-overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://testaddon7/skin/overlay.css
+style chrome://global/content/customizeToolbar.xul chrome://testaddon7/skin/overlay.css
