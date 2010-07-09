@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>vlc01.valentin.gosu@gmail.com</em:id>
+    <em:id>video-sidebar@rosedu.org</em:id>
     <em:type>2</em:type>
-    <em:name>Vali-test</em:name>
+    <em:name>Video Sidebar</em:name>
     <em:version>0.1</em:version>
-    <em:creator>Valentin G.</em:creator>
-    <em:contributor></em:contributor>
-    <em:description>un mic test de add-on</em:description>
-    <em:aboutURL>chrome://Vali-test/content/about.xul</em:aboutURL>
-    <em:optionsURL>chrome://Vali-test/content/options.xul</em:optionsURL>
+    <em:creator>ROSEdu</em:creator>
+    <em:contributor>Valentin Gosu</em:contributor>
+    <em:contributor>Stefan Dascalu</em:contributor>
+    <em:contributor>Andrei Burada</em:contributor>
+    <em:contributor>Irina Ciortan</em:contributor>
+    <em:contributor>Andrei Maruseac</em:contributor>
+    <em:contributor>Andrei Croitoru</em:contributor>
+    <em:description>Allows you to view both local and online videos in a sidebar, while surfing.</em:description>
+    <em:aboutURL>chrome://video-sidebar/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://video-sidebar/content/options.xul</em:optionsURL>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
-        <em:minVersion>3.6</em:minVersion>
+        <em:minVersion>3.5</em:minVersion>
         <em:maxVersion>4.0b2pre</em:maxVersion>
       </Description>
     </em:targetApplication>

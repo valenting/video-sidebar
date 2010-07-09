@@ -1,0 +1,8 @@
+content   video-sidebar                 chrome/content/
+skin      video-sidebar   classic/1.0   chrome/skin/
+locale    video-sidebar   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://video-sidebar/content/ff-overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://video-sidebar/skin/overlay.css
+style chrome://global/content/customizeToolbar.xul chrome://video-sidebar/skin/overlay.css

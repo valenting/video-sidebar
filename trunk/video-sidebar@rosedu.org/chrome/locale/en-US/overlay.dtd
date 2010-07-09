@@ -1,0 +1,8 @@
+<!ENTITY video-sidebar.label "Your localized menuitem">
+<!ENTITY video-sidebarContext.label "Your Menuitem">
+<!ENTITY video-sidebarContext.accesskey "Y">
+<!ENTITY video-sidebarToolbarButton.label "Your Toolbar Button">
+<!ENTITY video-sidebarToolbarButton.tooltip "This is your toolbar button!">
+<!ENTITY video-sidebarSidebar.label "Video Sidebar">
+<!ENTITY video-sidebarToolbar.name  "example">
+<!ENTITY video-sidebarToolbar.label "This is an example toolbar. You can hide it under View &gt; toolbars &gt; &video-sidebarToolbar.name;">
