@@ -1,8 +1,8 @@
-var Vali-test = {
+var video-sidebar = {
   onLoad: function() {
     // initialization code
     this.initialized = true;
-    this.strings = document.getElementById("Vali-test-strings");
+    this.strings = document.getElementById("video-sidebar-strings");
   },
 
   onMenuItemCommand: function(e) {
@@ -14,8 +14,8 @@ var Vali-test = {
 
   onToolbarButtonCommand: function(e) {
     // just reuse the function above.  you can change this, obviously!
-    Vali-test.onMenuItemCommand(e);
+    video-sidebar.onMenuItemCommand(e);
   }
 };
 
-window.addEventListener("load", Vali-test.onLoad, false);
+window.addEventListener("load", video-sidebar.onLoad, false);

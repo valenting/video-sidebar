@@ -1,8 +1,0 @@
-<!ENTITY Vali-test.label "Your localized menuitem">
-<!ENTITY Vali-testContext.label "Your Menuitem">
-<!ENTITY Vali-testContext.accesskey "Y">
-<!ENTITY Vali-testToolbarButton.label "Your Toolbar Button">
-<!ENTITY Vali-testToolbarButton.tooltip "This is your toolbar button!">
-<!ENTITY Vali-testSidebar.label "Your Sidebar">
-<!ENTITY Vali-testToolbar.name  "example">
-<!ENTITY Vali-testToolbar.label "This is only a test! Do not be alarmed!">
