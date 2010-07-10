@@ -15,7 +15,7 @@
   </menupopup>
 
   <keyset id="mainKeyset">
-    <key key="q" modifiers="control" id="key_openSidebar_video-sidebar" command="viewSidebar_video-sidebar" />
+    <key key="q" modifiers="control alt" id="key_openSidebar_video-sidebar" command="viewSidebar_video-sidebar" />
   </keyset>
 
   <broadcasterset id="mainBroadcasterSet">
@@ -29,13 +29,13 @@
                  oncommand="toggleSidebar('viewSidebar_video-sidebar');" />
   </broadcasterset>
   
-   <statusbar>
+   <statusbar id="status-bar" class="chromeclass-status">
 	<statusbarpanel label="VLC Left Status Bar Panel">
-		<button label="Play" id="play" oncommand="play()" />
-		<button label="Pause" id="pause" oncommand="pause()" />
-		<button label="Stop" id="stop" oncommand="stop()" />
-		<button label="Next" id="next" oncommand="next()" />
-		<button label="Prev" id="prev" oncommand="previous()" />
+		<toolbarbutton label="Play" id="play" oncommand="play()" />
+		<toolbarbutton label="Pause" id="pause" oncommand="pause()" />
+		<toolbarbutton label="Stop" id="stop" oncommand="stop()" />
+		<toolbarbutton label="Next" id="next" oncommand="next()" />
+		<toolbarbutton label="Prev" id="prev" oncommand="previous()" />
 	</statusbarpanel>
 	<spacer flex="1"/>
 	<progressmeter mode="determined" value="82"/>
