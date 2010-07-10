@@ -8,7 +8,7 @@
   <script src="ff-sidebar.js"/>
 
   <vbox flex="1">
-		<browser type="content" src="test.html" flex="1"/>
+		<browser id="sidebar_browser" type="content-primary" src="test.html" flex="1"/>
 	 
   </vbox>
   </page>

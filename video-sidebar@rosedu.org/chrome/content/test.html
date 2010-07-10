@@ -19,21 +19,22 @@
         height="240"
        autoplay="no"
         id="vlc"
-       target=""> </embed>
+       target="C:\test.avi"> </embed>
 	   
 	   <script type="text/javascript" src="vlc-controls.js"></script>
 	   </td>
       </tr>
     <tr>
       <td colspan="2"><div align="center">
-        <input type="button" onclick='play();' value="Play" />        
-        <input type="button" onclick='pause();' value="Pause" />        
-        <input type="button" onclick='stop();' value="Stop" />        
-        <input type="button" onclick='mute();' value="Mute" />
+        <input type="button" onclick='play();' value="Play" id="play" />        
+        <input type="button" onclick='pause();' value="Pause" id="pause" />        
+        <input type="button" onclick='stop();' value="Stop" id="stop" />        
+        <input type="button" onclick='mute();' value="Mute" id="mute" />
 		<!--<input type="button" onclick='createplaylist();' value="Playlist" />-->
 		<!--<input type="button" class="sed1" onClick="add_to_playlist();" size='30' value="Add" />-->
 		<!--<textarea id="txtin" rows="1" cols="32"></textarea> -->
-        <input type="button" onclick='next();' value="Next" />
+        <input type="button" onclick='next();' value="Next" id="next" />
+		<input type="button" class="sed1" onClick="previous();" size='30' value="Prev" id="prev" />
 		<!--<input type="button" onclick="getplaylist();" value="get playlist"/>-->
 		<input type="button" onclick="fullscreen();" value="Fullscreen"/>
 		<input type="file" id="add_file" value="" />
