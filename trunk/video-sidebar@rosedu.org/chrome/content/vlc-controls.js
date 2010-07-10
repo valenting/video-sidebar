@@ -46,6 +46,11 @@
                 vlc.playlist.next();
        }
 	   
+	   function previous()
+	   {
+			vlc.playlist.prev();
+	   }
+	   
 	   function getplaylist()
        {
 				var playlist=document.getElementById("playlist");

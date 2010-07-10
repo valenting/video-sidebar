@@ -4,6 +4,7 @@
 <overlay id="video-sidebar-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script src="overlay.js"/>
   <script src="ff-overlay.js"/>
+  <script src="ff-sidebar.js"/>
 
   <stringbundleset id="stringbundleset">
     <stringbundle id="video-sidebar-strings" src="chrome://video-sidebar/locale/overlay.properties"/>
@@ -28,17 +29,17 @@
                  oncommand="toggleSidebar('viewSidebar_video-sidebar');" />
   </broadcasterset>
   
-   <statusbar id="status-bar" class="chromeclass-status">
-	<statusbarpanel label="video-sidebar-status-panel">
-		<toolbarbutton label="Play" id="play" onclick='play();'/>
-		<toolbarbutton label="Pause" id="pause" />
-		<toolbarbutton label="Stop" id="stop" />
-		<toolbarbutton label="Next" id="next" />
-		<toolbarbutton label="Prev" id="prev" />
+   <statusbar>
+	<statusbarpanel label="VLC Left Status Bar Panel">
+		<button label="Play" id="play" oncommand="play()" />
+		<button label="Pause" id="pause" oncommand="pause()" />
+		<button label="Stop" id="stop" oncommand="stop()" />
+		<button label="Next" id="next" oncommand="next()" />
+		<button label="Prev" id="prev" oncommand="previous()" />
 	</statusbarpanel>
 	<spacer flex="1"/>
 	<progressmeter mode="determined" value="82"/>
-	<statusbarpanel label="video-sidebar-status-panel-right"/>
+	<statusbarpanel label="VLC Right Status Bar Panel"/>
 </statusbar>
 
 </overlay>
