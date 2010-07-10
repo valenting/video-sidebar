@@ -27,5 +27,18 @@
                  sidebartitle="&video-sidebarSidebar.label;"
                  oncommand="toggleSidebar('viewSidebar_video-sidebar');" />
   </broadcasterset>
+  
+   <statusbar id="status-bar" class="chromeclass-status">
+	<statusbarpanel label="video-sidebar-status-panel">
+		<toolbarbutton label="Play" id="play" onclick='play();'/>
+		<toolbarbutton label="Pause" id="pause" />
+		<toolbarbutton label="Stop" id="stop" />
+		<toolbarbutton label="Next" id="next" />
+		<toolbarbutton label="Prev" id="prev" />
+	</statusbarpanel>
+	<spacer flex="1"/>
+	<progressmeter mode="determined" value="82"/>
+	<statusbarpanel label="video-sidebar-status-panel-right"/>
+</statusbar>
 
 </overlay>
