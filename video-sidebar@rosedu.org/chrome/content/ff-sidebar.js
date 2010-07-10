@@ -36,15 +36,14 @@ window.addEventListener("unload", shutdown, false);
 		  var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
 			//alert("this is vlc sidebar");
-			vlc = sidebar.content.document.getElementById("vlc");
+			
+			
+			if (vlc == null){
+				vlc = sidebar.content.document.getElementById("vlc");
+			}
 			playbutton = sidebar.content.document.getElementById("play");
-
-			if (vlc){
-				playbutton.click();
-			}
-			else{
-				alert("vlc not found");
-			}
+			playbutton.click();
+			
 		  }
        }
 	   
