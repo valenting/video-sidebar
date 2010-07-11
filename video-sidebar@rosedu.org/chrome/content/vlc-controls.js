@@ -103,3 +103,25 @@
           oi.value += "VLC rate " + vlc.input.rate +"\n";
           oi.value += "VLC is Playing " + vlc.playlist.isPlaying +"\n";
        }
+	   
+	   function minimize() {
+           var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+ .getInterface(Components.interfaces.nsIWebNavigation)
+ .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+ .rootTreeItem
+ .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+ .getInterface(Components.interfaces.nsIDOMWindow);
+ mainWindow.document.getElementById("sidebar-box").width=10;
+
+       }
+       
+       function maximize() {
+           var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+ .getInterface(Components.interfaces.nsIWebNavigation)
+ .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+ .rootTreeItem
+ .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+ .getInterface(Components.interfaces.nsIDOMWindow);
+ mainWindow.document.getElementById("sidebar-box").width=320;
+
+       }
