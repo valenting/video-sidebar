@@ -10,7 +10,8 @@ function startup() {
                      .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                      .getInterface(Components.interfaces.nsIDOMWindow);
 
-  // Sidebar is loaded and mainwindow is ready                   
+  // Sidebar is loaded and mainwindow is ready
+  
 }
 
 function shutdown() {

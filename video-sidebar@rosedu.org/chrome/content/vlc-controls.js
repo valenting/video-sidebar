@@ -8,7 +8,11 @@ function startup() {
                      .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                      .getInterface(Components.interfaces.nsIDOMWindow);
 
-  // Sidebar is loaded and mainwindow is ready                   
+  // Sidebar is loaded and mainwindow is ready 
+  var vol = document.getElementById("volumeSelect");
+  vol.value = "100";
+  
+  modifyvolume(100);
 }
 
 window.addEventListener("load", startup, false);
