@@ -56,9 +56,7 @@ window.addEventListener("unload", shutdown, false);
 					vlc = sidebar.content.document.getElementById("vlc");
 				}
 				var volumeSelecter = null;
-				volumeSelecter = sidebar.content.document.getElementById("volumeSelect");
-				
-				
+				volumeSelecter = sidebar.content.document.getElementById("volumeSelect");		
 				
 				
 				if (volumeSelecter){
@@ -69,6 +67,7 @@ window.addEventListener("unload", shutdown, false);
 				}
 				
 				
+				volumeSelecter.focus();
 			}
 	   }
        function stop(){

@@ -7,7 +7,6 @@
        function mute(){
           vlc.audio.toggleMute();
        }
-
 	   function modifyvolume(value)
 	   {
 			vlc.audio.volume = parseInt(value);
