@@ -59,7 +59,16 @@ window.addEventListener("unload", shutdown, false);
 				volumeSelecter = sidebar.content.document.getElementById("volumeSelect");
 				
 				
-				volumeSelecter.value = val;
+				
+				
+				if (volumeSelecter){
+					
+					volumeSelecter.value = val;
+					volumeSelecter.focus();
+					volumeSelecter.blur();
+				}
+				
+				
 			}
 	   }
        function stop(){

@@ -46,13 +46,13 @@
 		<input type="button" onclick="fullscreen();" value="Fullscreen"/>
 		<input type="file" id="add_file" value="" />
 		<input type="button" onclick="addRowToTable();" value="Add"/>
-		<select id="volumeSelect" readonly onChange="modifyvolume(this.value);">
-			<option value="0"> 0% </option>
-			<option value="10"> 10% </option>
-			<option value="50"> 50% </option>
-			<option value="100"> 100% </option>
-			<option value="150"> 150% </option>
-			<option value="200"> 200% </option>
+		<select id="volumeSelect" readonly onblur="modifyvolume(this.value)" >
+			<option value="0" id="0" onclick="modifyvolume(this.value)" > 0% </option>
+			<option value="10" id="10" onclick="modifyvolume(this.value)" > 10% </option>
+			<option value="50" id="50" onclick="modifyvolume(this.value)" > 50% </option>
+			<option value="100" id="100" onclick="modifyvolume(this.value)" > 100% </option>
+			<option value="150" id="150" onclick="modifyvolume(this.value)" > 150% </option>
+			<option value="200" id="200" onclick="modifyvolume(this.value)" > 200% </option>
 		</select>
       </div></td>
       </tr>
