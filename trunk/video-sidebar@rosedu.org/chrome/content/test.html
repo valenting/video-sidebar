@@ -16,9 +16,9 @@
       <td colspan="2"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
         width="300"
         height="240"
-       autoplay="no"
+       autoplay="yes"
         id="vlc"
-       target=""> </embed>
+       target="/home/stefan/Desktop/test/test.avi"> </embed>
 	   
 	   <script type="text/javascript" src="vlc-controls.js"></script>
 	   </td>
@@ -46,6 +46,14 @@
 		<input type="button" onclick="fullscreen();" value="Fullscreen"/>
 		<input type="file" id="add_file" value="" />
 		<input type="button" onclick="addRowToTable();" value="Add"/>
+		<select readonly onChange="modifyvolume(this.value);">
+			<option value="0"> 0% </option>
+			<option value="10"> 10% </option>
+			<option value="50"> 50% </option>
+			<option value="100"> 100% </option>
+			<option value="150"> 150% </option>
+			<option value="200"> 200% </option>
+		</select>
       </div></td>
       </tr>
     <tr>

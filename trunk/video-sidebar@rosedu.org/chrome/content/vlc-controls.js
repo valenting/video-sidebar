@@ -8,7 +8,10 @@
           vlc.audio.toggleMute();
        }
 
-	   
+	   function modifyvolume(value)
+	   {
+			vlc.audio.volume = parseInt(value);
+	   }
        function play(){
           vlc.playlist.play();
           intval = setInterval(uptime, 250);
