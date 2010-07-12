@@ -35,24 +35,6 @@
 		<toolbarbutton label="Stop" id="stop" oncommand="stop()" />
 		<toolbarbutton label="Next" id="next" oncommand="next()" />
 		<toolbarbutton label="Prev" id="prev" oncommand="previous()" />
-		<menulist>
-			<menupopup>
-				<menuitem type="button" label="0%" value="0" oncommand="selectVolume(0);"/>
-				<menuitem label="10%" value="10" oncommand="selectVolume(10);"/>
-				<menuitem label="50%" value="50" oncommand="selectVolume(50);"/>
-				<menuitem label="100%" value="100" oncommand="selectVolume(100);"/>
-				<menuitem label="150%" value="150" oncommand="selectVolume(150);"/>
-				<menuitem label="200%" value="200" oncommand="selectVolume(200);"/>
-			</menupopup>
-		</menulist>
-	<spacer flex="1"/>
-</statusbar><statusbar id="status-bar" class="chromeclass-status">
-	<statusbarpanel id="status-bar-panel" label="VLC Left Status Bar Panel">
-		<toolbarbutton label="Play" id="play" oncommand="play()" />
-		<toolbarbutton label="Pause" id="pause" oncommand="pause()" />
-		<toolbarbutton label="Stop" id="stop" oncommand="stop()" />
-		<toolbarbutton label="Next" id="next" oncommand="next()" />
-		<toolbarbutton label="Prev" id="prev" oncommand="previous()" />
 		<menulist id="volumeSelecter">
 			<menupopup>
 				<menuitem id="0" label="0%" value="0" oncommand="selectVolume(0);"/>
@@ -63,10 +45,7 @@
 				<menuitem id="200" label="200%" value="5" oncommand="selectVolume(200);"/>
 			</menupopup>
 		</menulist>
-	</statusbarpanel>
 	<spacer flex="1"/>
-	<progressmeter mode="determined" value="82"/>
-	<statusbarpanel label="VLC Right Status Bar Panel"/>
 </statusbar>
 
 </overlay>
