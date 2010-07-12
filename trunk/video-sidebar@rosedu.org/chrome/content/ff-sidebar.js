@@ -46,7 +46,22 @@ window.addEventListener("unload", shutdown, false);
 			
 		  }
        }
-	   
+	   function selectVolume(val)
+	   {
+			var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;
+			if(sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul")
+			{
+				if(vlc == null)
+				{
+					vlc = sidebar.content.document.getElementById("vlc");
+				}
+				var volumeSelecter = null;
+				volumeSelecter = sidebar.content.document.getElementById("volumeSelect");
+				
+				
+				volumeSelecter.value = val;
+			}
+	   }
        function stop(){
           var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {

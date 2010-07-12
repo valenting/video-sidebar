@@ -36,6 +36,16 @@
 		<toolbarbutton label="Stop" id="stop" oncommand="stop()" />
 		<toolbarbutton label="Next" id="next" oncommand="next()" />
 		<toolbarbutton label="Prev" id="prev" oncommand="previous()" />
+		<menulist>
+			<menupopup>
+				<menuitem label="0%" value="0" oncommand="selectVolume(0);"/>
+				<menuitem label="10%" value="1" oncommand="selectVolume(10);"/>
+				<menuitem label="50%" value="2" oncommand="selectVolume(50);"/>
+				<menuitem label="100%" value="3" oncommand="selectVolume(100);"/>
+				<menuitem label="150%" value="4" oncommand="selectVolume(150);"/>
+				<menuitem label="200%" value="5" oncommand="selectVolume(200);"/>
+			</menupopup>
+		</menulist>
 	</statusbarpanel>
 	<spacer flex="1"/>
 	<progressmeter mode="determined" value="82"/>
