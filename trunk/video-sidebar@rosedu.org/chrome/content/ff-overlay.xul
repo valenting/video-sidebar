@@ -30,11 +30,11 @@
   </broadcasterset>
 
    <statusbar id="status-bar" class="chromeclass-status">
-		<toolbarbutton label="Play" id="play" oncommand="play()" />
-		<toolbarbutton label="Pause" id="pause" oncommand="pause()" />
-		<toolbarbutton label="Stop" id="stop" oncommand="stop()" />
-		<toolbarbutton label="Next" id="next" oncommand="next()" />
-		<toolbarbutton label="Prev" id="prev" oncommand="previous()" />
+		<toolbarbutton id="play" oncommand="play()" image="chrome://video-sidebar/content/buttons/play.ico" />
+		<toolbarbutton id="pause" oncommand="pause()" image="chrome://video-sidebar/content/buttons/pause.ico" />
+		<toolbarbutton id="stop" oncommand="stop()" image="chrome://video-sidebar/content/buttons/stop.ico" />
+		<toolbarbutton id="prev" oncommand="previous()" image="chrome://video-sidebar/content/buttons/prev.ico"  />
+		<toolbarbutton id="next" oncommand="next()" image="chrome://video-sidebar/content/buttons/next.ico" />
 		<menulist id="volumeSelecter">
 			<menupopup>
 				<menuitem id="0" label="0%" value="0" oncommand="selectVolume(0);"/>
