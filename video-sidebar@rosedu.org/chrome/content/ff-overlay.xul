@@ -28,7 +28,7 @@
                  sidebartitle="&video-sidebarSidebar.label;"
                  oncommand="toggleSidebar('viewSidebar_video-sidebar');" />
   </broadcasterset>
-  
+
    <statusbar id="status-bar" class="chromeclass-status">
 		<toolbarbutton label="Play" id="play" oncommand="play()" />
 		<toolbarbutton label="Pause" id="pause" oncommand="pause()" />
