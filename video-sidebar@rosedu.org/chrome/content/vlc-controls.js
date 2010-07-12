@@ -1,4 +1,19 @@
-       var vlc = document.getElementById("vlc");
+       var mainWindow = null;
+	   
+function startup() {
+  mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                     .getInterface(Components.interfaces.nsIWebNavigation)
+                     .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+                     .rootTreeItem
+                     .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                     .getInterface(Components.interfaces.nsIDOMWindow);
+
+  // Sidebar is loaded and mainwindow is ready                   
+}
+
+window.addEventListener("load", startup, false);
+
+	   var vlc = document.getElementById("vlc");
 	   
 	   var items_list=new Array();
 	   var items_tags=new Array();
@@ -10,6 +25,20 @@
 	   function modifyvolume(value)
 	   {
 			vlc.audio.volume = parseInt(value);
+			var statusbar = null;
+			statusbar = mainWindow.document.getElementById("status-bar");
+			
+			var volumeselecter = null;
+			volumeselecter = statusbar.ownerDocument.getElementById("volumeSelecter");
+			
+			var item = null;
+			
+			item = statusbar.ownerDocument.getElementById(value);
+			
+			
+			
+			volumeselecter.selectedItem = item;
+		
 	   }
        function play(){
           vlc.playlist.play();
