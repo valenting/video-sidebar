@@ -20,7 +20,7 @@
           vlc.video.toggleFullscreen();
        }
        function stop(){
-          clearInterval(intval);
+          //clearInterval(intval); // Stop nu merge fara play inainte
           vlc.playlist.stop();
 
        }
