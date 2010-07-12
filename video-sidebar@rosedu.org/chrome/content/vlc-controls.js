@@ -48,9 +48,9 @@ window.addEventListener("load", startup, false);
           vlc.video.toggleFullscreen();
        }
        function stop(){
-          //clearInterval(intval); // Stop nu merge fara play inainte
           vlc.playlist.stop();
-
+		  clearInterval(intval); // Stop nu merge fara play inainte
+          
        }
        function pause(){   
           vlc.playlist.togglePause();
