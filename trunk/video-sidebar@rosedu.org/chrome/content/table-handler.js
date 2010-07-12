@@ -2,7 +2,7 @@ function addRowToTable()
 {
 	var f=document.getElementById('add_file');
 	var file = f.value;
-	file = file.toLowerCase();
+	//file = file.toLowerCase();
 	if(file == "") {
 		alert("Enter a file name or click BROWSE");
 	}
