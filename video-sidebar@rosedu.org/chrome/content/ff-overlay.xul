@@ -30,6 +30,8 @@
   </broadcasterset>
 
    <statusbar id="status-bar" class="chromeclass-status">
+   <statusbarpanel id="video-sidebar-panel" insertbefore="statusbar-display">
+   <spacer flex="0"/>
 		<toolbarbutton id="play" oncommand="play()" image="chrome://video-sidebar/content/buttons/play.ico" />
 		<toolbarbutton id="pause" oncommand="pause()" image="chrome://video-sidebar/content/buttons/pause.ico" />
 		<toolbarbutton id="stop" oncommand="stop()" image="chrome://video-sidebar/content/buttons/stop.ico" />
@@ -45,7 +47,7 @@
 				<menuitem id="200" label="200%" value="5" oncommand="selectVolume(200);"/>
 			</menupopup>
 		</menulist>
-	<spacer flex="1"/>
+	</statusbarpanel>
 </statusbar>
 
 </overlay>
