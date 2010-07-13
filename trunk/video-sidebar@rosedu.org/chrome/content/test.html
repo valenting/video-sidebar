@@ -31,14 +31,12 @@
       </tr>
     <tr>
       <td colspan="2"><div align="center">
-		<input type="button" onclick="minimize();" value="<<" id="minimize" style="position:fixed;
+		<input type=image onclick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
 			bottom:40px;
-			right:10px;
-			width:40px;"/>
-		<input type="button" onclick="maximize();" value=">>" id="maximize" style="position:fixed;
-			bottom:10px;
-			right:10px;
-			width:40px;"/>
+			left:0px;"/>
+		<input onclick="minimize();" type=image src="chrome://video-sidebar/content/buttons/grippy-lft.gif" id="minimize" style="position:fixed;
+			top:40px;
+			left:0px;"/>
         <input type="image" src="media/play.png" width="30" height="30" onclick='play();' value="Play" id="play" />        
         <input type="image" src="media/pause.png" width="30" height="30" onclick='pause();' value="Pause" id="pause" />        
         <input type="image" src="media/stop.png"  width="30" height="30" onclick='stop();' value="Stop" id="stop" />        
