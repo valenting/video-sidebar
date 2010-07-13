@@ -133,7 +133,8 @@ window.addEventListener("load", startup, false);
 	   }
 
 
-       function uptime(){
+       function uptime()
+	   {
 		  var x = parseInt(vlc.input.time);
 		  var slider = null;
 		  slider = document.getElementById("your_display_id");
@@ -145,6 +146,7 @@ window.addEventListener("load", startup, false);
 		  slider.value = pos;
 		  
 		  document.getElementById("nowt").innerHTML = eval(vlc.input.time/1000);
+		  
 		  
 		  
        }
