@@ -47,6 +47,7 @@
 				<menuitem id="200" label="200%" value="5" oncommand="selectVolume(200);"/>
 			</menupopup>
 		</menulist>
+		<scale min="1" max="100" />
 	</statusbarpanel>
 </statusbar>
 
