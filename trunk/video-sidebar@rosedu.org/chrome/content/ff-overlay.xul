@@ -13,13 +13,17 @@
   <menupopup id="viewSidebarMenu">
     <menuitem key="key_openSidebar_video-sidebar" observes="viewSidebar_video-sidebar" />
   </menupopup>
-
-  <keyset id="mainKeyset">
-    <key key="q" modifiers="control alt" id="key_openSidebar_video-sidebar" command="viewSidebar_video-sidebar" />
-  </keyset>
-
+  
+  <script type="application/x-javascript" src="Preferences.js"/> 
   <script type="application/x-javascript" src="options.js"/> 
   
+  <keyset id="mainKeyset">
+  </keyset>
+  
+    <script type="application/x-javascript">
+		loadKeys();
+	</script>
+	
   <broadcasterset id="mainBroadcasterSet">
     <broadcaster id="viewSidebar_video-sidebar"
                  label="&video-sidebarSidebar.label;"
@@ -47,5 +51,6 @@
 		<scale min="0" max="100" onmouseup="seek(this.value);"/>
 	</statusbarpanel>
 </statusbar>
+
 
 </overlay>
