@@ -48,7 +48,6 @@ window.addEventListener("load", startup, false);
 		
 	   }
        function play(){
-		  
 	   
           vlc.playlist.play();
 		  
@@ -123,6 +122,7 @@ window.addEventListener("load", startup, false);
 			items_list[items_count] = id;
 			items_tags[items_count] = link;
 			items_count++;
+			alert(vlc.playlist.items.count);
 			//playMov(link);
 	   }
 	   
@@ -134,6 +134,9 @@ window.addEventListener("load", startup, false);
 				//alert(item);
 				if (items_tags[i]==item) {
 					vlc.playlist.playItem(items_list[i]);
+					 intval = setInterval(uptime, 250);
+					var hidden = document.getElementById("length");
+					hidden.value = 0;
 					break;
 				}
 			}
