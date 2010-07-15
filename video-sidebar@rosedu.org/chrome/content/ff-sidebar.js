@@ -145,8 +145,5 @@ window.addEventListener("unload", shutdown, false);
 				seekto.click();
 				seektext.value = 0;
 				
-			  }
-		
-		
-		
+			  }	
 		}
