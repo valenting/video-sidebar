@@ -18,21 +18,19 @@ function startup() {
 
 
 function setKeys() {
-	var bookmarklet         = null;
-    var id                  = null;
+	var id                  = null;
     var key                 = null;
-    var keyElement          = null;
     var keyPreference       = null;
-    var keyPreferenceValue  = null;
     var keys                = null;
-    var keySet              = null;
     var keysLength          = null;
-    var mainDocument        = null;
-    var path                = null;
-    var success             = false;
-    var url                 = null;
-    var windowEnumeration   = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator).getEnumerator("navigator:browser");
-	
+    var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                     .getInterface(Components.interfaces.nsIWebNavigation)
+                     .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+                     .rootTreeItem
+                     .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                     .getInterface(Components.interfaces.nsIDOMWindow);
+
+	// Sidebar is loaded and mainwindow is ready
 	keySet = mainWindow.document.getElementById("mainKeyset");
 	
 	if(keySet)
@@ -50,7 +48,7 @@ function setKeys() {
 			{
 				keyPreference = Preferences.get("extensions.video-sidebar.stringpref");
 				key.setAttribute("key", keyPreference);
-  //              alert("spuf1");
+               // alert("spuf1");
             }
         }
 	}
