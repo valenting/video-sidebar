@@ -11,8 +11,56 @@ function startup() {
                      .getInterface(Components.interfaces.nsIDOMWindow);
 
   // Sidebar is loaded and mainwindow is ready
-  
+  setKeys();
+  //alert("hello2");
 }
+
+
+
+function setKeys() {
+	var bookmarklet         = null;
+    var id                  = null;
+    var key                 = null;
+    var keyElement          = null;
+    var keyPreference       = null;
+    var keyPreferenceValue  = null;
+    var keys                = null;
+    var keySet              = null;
+    var keysLength          = null;
+    var mainDocument        = null;
+    var path                = null;
+    var success             = false;
+    var url                 = null;
+    var windowEnumeration   = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator).getEnumerator("navigator:browser");
+	
+	keySet = mainWindow.document.getElementById("mainKeyset");
+	
+	if(keySet)
+	{
+		keys       = keySet.childNodes;
+		keysLength = keys.length;
+
+		// Loop through the keys
+		for(var i = 0; i < keysLength; i++)
+		{
+			key = keys.item(i);
+
+			// If the key has an id starting with webdeveloper
+			if(key.hasAttribute("id") && key.getAttribute("id").indexOf("key_openSidebar_video-sidebar") == 0)
+			{
+				keyPreference = Preferences.get("extensions.video-sidebar.stringpref");
+				key.setAttribute("key", keyPreference);
+  //              alert("spuf1");
+            }
+        }
+	}
+}
+	
+
+
+
+
+
 
 function shutdown() {
   // Sidebar is unloading
