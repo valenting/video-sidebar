@@ -164,7 +164,20 @@ window.addEventListener("load", startup, false);
 		  
 		  
        }
-	   
+	   function volume()
+	   {
+		  var x = parseInt(vlc.audio.volume);
+		  var slider = null;
+		  slider = document.getElementById("your_display_id2");
+		  //var pos =  parseInt((x * 100) / parseInt(vlc.input.length));
+		  
+		  //var p = parseInt(slider.style.left);
+		  
+		  carpeLeft("your_slider_id2", x);
+		  slider.value = pos;
+		  
+		  //document.getElementById("nowt").innerHTML = eval(vlc.input.time/1000);
+	   }
        function else_r(){
           oi = document.getElementById("txtout");
           oi.value = '';
@@ -309,8 +322,10 @@ function moveSlider(evnt)
 		var v = Math.round((sliderPos * carpeslider.scale + carpeslider.from) * // calculate display value
 			Math.pow(10, carpedisplay.decimals)) / Math.pow(10, carpedisplay.decimals);
 		carpedisplay.value = v; // put the new value in the slider display element
-		vlc.input.time = v * vlc.input.length / 100;
-		
+		if(carpeslider==carpesliders[0])
+			vlc.input.time = v * vlc.input.length / 100;
+		else
+			vlc.audio.volume=v;
 		return false;
 	}
 	return
