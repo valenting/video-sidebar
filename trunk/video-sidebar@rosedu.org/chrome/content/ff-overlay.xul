@@ -38,7 +38,7 @@
 		<toolbarbutton id="prev" oncommand="previous()" image="chrome://video-sidebar/content/buttons/prev.ico"  />
 		<toolbarbutton id="next" oncommand="next()" image="chrome://video-sidebar/content/buttons/next.ico" />
 		<menupopup id="scara">
-			<scale id="volumeSelecter" min="-200" max="0" orient="vertical" onmouseup="selectVolume(this.value)" />
+			<scale id="volumeSelecter" min="-200" max="0" value = "-100" orient="vertical" onmouseup="selectVolume(this.value)" />
 		</menupopup>
 		<toolbarbutton popup="scara" image="chrome://video-sidebar/content/buttons/sound.ico"/>
 		<!-- scale id="volumeSelecter" min="0" max="200" onmouseup="selectVolume(this.value)" / -->
