@@ -15,7 +15,7 @@ function startup() {
   var vol = document.getElementById("volumeSelect");
   vol.value = "100";
   
-  modifyvolume(100);
+  //modifyvolume(100);
 }
 
 window.addEventListener("load", startup, false);
@@ -29,22 +29,25 @@ window.addEventListener("load", startup, false);
        function mute(){
           vlc.audio.toggleMute();
        }
+	   
 	   function modifyvolume(value)
 	   {
+			
 			vlc.audio.volume = parseInt(value);
+			
 			var statusbar = null;
 			statusbar = mainWindow.document.getElementById("status-bar");
 			
 			var volumeselecter = null;
 			volumeselecter = statusbar.ownerDocument.getElementById("volumeSelecter");
 			
-			var item = null;
-			
-			item = statusbar.ownerDocument.getElementById(value);
-			
-			volumeselecter.selectedItem = item;
+			volumeselecter.value = -parseInt(value);
 		
 	   }
+	   
+	   function modifyvolume2(){
+			modifyvolume(document.getElementById("vol").value);
+		}
        function play(){
 	   
           vlc.playlist.play();
@@ -162,20 +165,7 @@ window.addEventListener("load", startup, false);
 		  
 		  
        }
-	   function volume()
-	   {
-		  var x = parseInt(vlc.audio.volume);
-		  var slider = null;
-		  slider = document.getElementById("your_display_id2");
-		  //var pos =  parseInt((x * 100) / parseInt(vlc.input.length));
-		  
-		  //var p = parseInt(slider.style.left);
-		  
-		  carpeLeft("your_slider_id2", x);
-		  slider.value = pos;
-		  
-		  //document.getElementById("nowt").innerHTML = eval(vlc.input.time/1000);
-	   }
+	  
        function else_r(){
           oi = document.getElementById("txtout");
           oi.value = '';
@@ -323,7 +313,7 @@ function moveSlider(evnt)
 		if(carpeslider==carpesliders[0])
 			vlc.input.time = v * vlc.input.length / 100;
 		else
-			vlc.audio.volume=v;
+			modifyvolume(v);
 		return false;
 	}
 	return

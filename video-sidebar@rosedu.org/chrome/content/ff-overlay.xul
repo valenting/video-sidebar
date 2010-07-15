@@ -38,19 +38,10 @@
 		<toolbarbutton id="prev" oncommand="previous()" image="chrome://video-sidebar/content/buttons/prev.ico"  />
 		<toolbarbutton id="next" oncommand="next()" image="chrome://video-sidebar/content/buttons/next.ico" />
 		<menupopup id="scara">
-			<scale min="0" max="100" orient="vertical"/>
+			<scale id="volumeSelecter" min="-200" max="0" orient="vertical" onmouseup="selectVolume(this.value)" />
 		</menupopup>
 		<toolbarbutton popup="scara" image="chrome://video-sidebar/content/buttons/sound.ico"/>
-		<menulist id="volumeSelecter">
-			<menupopup>
-				<menuitem id="0" label="0%" value="0" oncommand="selectVolume(0);"/>
-				<menuitem id="10" label="10%" value="1" oncommand="selectVolume(10);"/>
-				<menuitem id="50" label="50%" value="2" oncommand="selectVolume(50);"/>
-				<menuitem id="100" label="100%" value="3" oncommand="selectVolume(100);" selected="true" />
-				<menuitem id="150" label="150%" value="4" oncommand="selectVolume(150);"/>
-				<menuitem id="200" label="200%" value="5" oncommand="selectVolume(200);"/>
-			</menupopup>
-		</menulist>
+		<!-- scale id="volumeSelecter" min="0" max="200" onmouseup="selectVolume(this.value)" / -->
 		<scale min="0" max="100" onmouseup="seek(this.value);"/>
 	</statusbarpanel>
 </statusbar>

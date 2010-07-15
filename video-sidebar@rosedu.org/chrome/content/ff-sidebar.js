@@ -11,54 +11,8 @@ function startup() {
                      .getInterface(Components.interfaces.nsIDOMWindow);
 
   // Sidebar is loaded and mainwindow is ready
-  setKeys();
-  //alert("hello2");
+  
 }
-
-
-
-function setKeys() {
-	var id                  = null;
-    var key                 = null;
-    var keyPreference       = null;
-    var keys                = null;
-    var keysLength          = null;
-    var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
-                     .getInterface(Components.interfaces.nsIWebNavigation)
-                     .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
-                     .rootTreeItem
-                     .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
-                     .getInterface(Components.interfaces.nsIDOMWindow);
-
-	// Sidebar is loaded and mainwindow is ready
-	keySet = mainWindow.document.getElementById("mainKeyset");
-	
-	if(keySet)
-	{
-		keys       = keySet.childNodes;
-		keysLength = keys.length;
-
-		// Loop through the keys
-		for(var i = 0; i < keysLength; i++)
-		{
-			key = keys.item(i);
-
-			// If the key has an id starting with webdeveloper
-			if(key.hasAttribute("id") && key.getAttribute("id").indexOf("key_openSidebar_video-sidebar") == 0)
-			{
-				keyPreference = Preferences.get("extensions.video-sidebar.stringpref");
-				key.setAttribute("key", keyPreference);
-               // alert("spuf1");
-            }
-        }
-	}
-}
-	
-
-
-
-
-
 
 function shutdown() {
   // Sidebar is unloading
@@ -96,27 +50,64 @@ window.addEventListener("unload", shutdown, false);
 	   function selectVolume(val)
 	   {
 			var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;
+			var newval = Math.abs(val);
+			
 			if(sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul")
 			{
 				if(vlc == null)
 				{
 					vlc = sidebar.content.document.getElementById("vlc");
 				}
-				var volumeSelecter = null;
-				volumeSelecter = sidebar.content.document.getElementById("volumeSelect");		
+				var volumeValue = null;
+				volumeValue = sidebar.content.document.getElementById("vol");	
 				
+				var volumeButton = null;
+				volumeButton = sidebar.content.document.getElementById("volbutton");	
 				
-				if (volumeSelecter){
+				var volumeDisplay = null;
+				volumeDisplay = sidebar.content.document.getElementById("your_display_id2");		
+				
+				carpeLeft("your_slider_id2",newval/2);
+				
+				volumeDisplay.value = newval;
+				
+				volumeValue.value = newval;
+				
+				volumeButton.click();
+				
+				/*if (volumeSelecter){
 					
 					volumeSelecter.value = val;
 					volumeSelecter.focus();
 					volumeSelecter.blur();
-				}
+				}				
+				volumeSelecter.focus();*/
 				
 				
-				volumeSelecter.focus();
 			}
 	   }
+	   
+	    function carpeLeft(elmnt, pos)
+		{
+			var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;
+			if (!(elmnt = sidebar.content.document.getElementById(elmnt))) {
+				alert("error");
+				return 0;
+			}
+			if (elmnt.style && (typeof(elmnt.style.left) == 'string')) {
+				if (typeof(pos) == 'number') elmnt.style.left = pos + 'px';
+				else {
+					pos = parseInt(elmnt.style.left);
+					if (isNaN(pos)) pos = 0;
+				}
+			}
+			else if (elmnt.style && elmnt.style.pixelLeft) {
+				if (typeof(pos) == 'number') elmnt.style.pixelLeft = pos;
+				else pos = elmnt.style.pixelLeft;
+			}
+			return pos+1;
+		}
+	   
        function stop(){
           var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
@@ -193,3 +184,5 @@ window.addEventListener("unload", shutdown, false);
 				
 			  }	
 		}
+		
+		
