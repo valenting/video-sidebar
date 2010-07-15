@@ -182,7 +182,7 @@ window.addEventListener("load", startup, false);
  .rootTreeItem
  .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
  .getInterface(Components.interfaces.nsIDOMWindow);
- mainWindow.document.getElementById("sidebar-box").width=5;
+ mainWindow.document.getElementById("sidebar-box").width=10;
 
        }
        

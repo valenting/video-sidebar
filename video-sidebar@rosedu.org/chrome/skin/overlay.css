@@ -20,6 +20,14 @@
 {
   -moz-image-region: rect(24px 40px 40px 24px);
 }
+#video-sidebar-box {
+    overflow-x: hidden !important;
+}
+#video-sidebar {
+    min-width: 0px !important;
+    max-width: none !important;
+    overflow-x: hidden !important;
+}
 #sidebar-box {
     overflow-x: hidden !important;
 }
