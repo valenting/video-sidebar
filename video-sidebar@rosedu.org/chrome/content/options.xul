@@ -6,7 +6,7 @@
     <preferences>
       <preference id="boolpref1" name="extensions.video-sidebar.boolpref" type="bool"/>
       <preference id="intpref1" name="extensions.video-sidebar.intpref" type="int"/>
-      <preference id="stringpref1" name="extensions.video-sidebar.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="stringpref1" name="extensions.video-sidebar.stringpref" type="string" onchange="setKeys()"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
     </preferences>
     <checkbox id="checkboolpref" preference="boolpref1" label="&checkboolpref.label;" accesskey="&checkboolpref.accesskey;"/>
     <label accesskey="&intpref.accesskey;" control="textintpref">&intpref.label;</label><textbox id="textintpref" preference="intpref1"/>
