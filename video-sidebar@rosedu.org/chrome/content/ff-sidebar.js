@@ -125,3 +125,28 @@ window.addEventListener("unload", shutdown, false);
 			
 		  }
 		}
+		
+		function seek(pos){
+			  var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
+			  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
+				//alert("this is vlc sidebar");
+				//alert(pos);
+				var length = null;
+				length = sidebar.content.document.getElementById("length");
+				//alert(length.value);
+				
+				var seekto = null;
+				seekto = sidebar.content.document.getElementById("seekbutton");
+				
+				var seektext = sidebar.content.document.getElementById("seekto");
+				
+				var x = (parseInt(pos) * parseInt(length.value)) / 100;
+				seektext.value = x;
+				seekto.click();
+				seektext.value = 0;
+				
+			  }
+		
+		
+		
+		}
