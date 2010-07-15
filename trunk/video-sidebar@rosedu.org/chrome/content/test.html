@@ -89,15 +89,10 @@
         valuecount="201"
         value="100"
         typelock="off" /></div>
-		<select id="volumeSelect" readonly onblur="modifyvolume(this.value)" >
-			<option value="0" id="0" onclick="modifyvolume(this.value)" > 0% </option>
-			<option value="10" id="10" onclick="modifyvolume(this.value)" > 10% </option>
-			<option value="50" id="50" onclick="modifyvolume(this.value)" > 50% </option>
-			<option value="100" id="100" onclick="modifyvolume(this.value)" > 100% </option>
-			<option value="150" id="150" onclick="modifyvolume(this.value)" > 150% </option>
-			<option value="200" id="200" onclick="modifyvolume(this.value)" > 200% </option>
-		</select>
 		<input id="length" type="hidden" value="" />
+		<input id="vol" type="text" style="display: none;" value="100" />
+		<input type="button" id="volbutton" onclick="modifyvolume2()" style="display: none;" value="Change It"/>
+
       </div></td>
       </tr>
     <tr>
