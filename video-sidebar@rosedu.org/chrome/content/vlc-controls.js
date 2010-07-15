@@ -182,8 +182,10 @@ window.addEventListener("load", startup, false);
  .rootTreeItem
  .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
  .getInterface(Components.interfaces.nsIDOMWindow);
- mainWindow.document.getElementById("sidebar-box").width=10;
-
+ mainWindow.document.getElementById("sidebar-box").width=5;
+		document.getElementById("minimize").style.visibility = "hidden";
+		document.getElementById("maximize").style.visibility = "visible";
+		//document.getElementById("sidebar-box").style.opacity = "0.1";
        }
        
        function maximize() {
@@ -194,7 +196,8 @@ window.addEventListener("load", startup, false);
  .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
  .getInterface(Components.interfaces.nsIDOMWindow);
  mainWindow.document.getElementById("sidebar-box").width=320;
-
+		document.getElementById("maximize").style.visibility = "hidden";
+		document.getElementById("minimize").style.visibility = "visible";
        }
 	   
 //---------------------------------+
