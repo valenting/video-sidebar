@@ -2,14 +2,14 @@
 <?xml-stylesheet href="chrome://video-sidebar/skin/overlay.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://video-sidebar/locale/overlay.dtd">
 <overlay id="video-sidebar-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <script src="overlay.js"/>
-  <script src="ff-overlay.js"/>
-  <script src="ff-sidebar.js"/>
+  <script type="application/x-javascript" src="overlay.js"/>
+  <script type="application/x-javascript" src="ff-overlay.js"/>
+  <script type="application/x-javascript" src="ff-sidebar.js"/>
 
   <stringbundleset id="stringbundleset">
     <stringbundle id="video-sidebar-strings" src="chrome://video-sidebar/locale/overlay.properties"/>
   </stringbundleset>
-
+	
   <menupopup id="viewSidebarMenu">
     <menuitem key="key_openSidebar_video-sidebar" observes="viewSidebar_video-sidebar" />
   </menupopup>
@@ -18,6 +18,8 @@
     <key key="q" modifiers="control alt" id="key_openSidebar_video-sidebar" command="viewSidebar_video-sidebar" />
   </keyset>
 
+  <script type="application/x-javascript" src="options.js"/> 
+  
   <broadcasterset id="mainBroadcasterSet">
     <broadcaster id="viewSidebar_video-sidebar"
                  label="&video-sidebarSidebar.label;"
