@@ -48,6 +48,10 @@
 			</menupopup>
 		</menulist>
 		<scale min="0" max="100" onmouseup="seek(this.value);"/>
+		<menupopup id="scara">
+			<scale min="0" max="100" orient="vertical"/>
+		</menupopup>
+		<toolbarbutton label="Volume" popup="scara"/>
 	</statusbarpanel>
 </statusbar>
 
