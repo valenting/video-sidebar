@@ -78,11 +78,12 @@
 			<option value="150" id="150" onclick="modifyvolume(this.value)" > 150% </option>
 			<option value="200" id="200" onclick="modifyvolume(this.value)" > 200% </option>
 		</select>
+		<input id="length" type="hidden" value="" />
       </div></td>
       </tr>
     <tr>
       <td width="163"><input id="seekto" type="text" size="4" value="10" />
-        <input type="button" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
+        <input id="seekbutton" type="button" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
         <br>
         <input id="backof" type="text" size="4" value="5" />
       <input type="button" class="sed1" onclick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>

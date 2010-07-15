@@ -48,8 +48,15 @@ window.addEventListener("load", startup, false);
 		
 	   }
        function play(){
+		  
+	   
           vlc.playlist.play();
+		  
           intval = setInterval(uptime, 250);
+		  
+		  var hidden = document.getElementById("length");
+		  
+		  hidden.value = 0;
 		  
        }
 	   function fullscreen(){
@@ -147,6 +154,10 @@ window.addEventListener("load", startup, false);
 		  
 		  document.getElementById("nowt").innerHTML = eval(vlc.input.time/1000);
 		  
+		  var hidden = document.getElementById("length");
+		  if (hidden.value == 0)
+			hidden.value = parseInt(vlc.input.length/1000);
+		  //alert(hidden.value);
 		  
 		  
        }
