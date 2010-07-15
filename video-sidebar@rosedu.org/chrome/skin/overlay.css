@@ -20,3 +20,11 @@
 {
   -moz-image-region: rect(24px 40px 40px 24px);
 }
+#sidebar-box {
+    overflow-x: hidden !important;
+}
+#sidebar {
+    min-width: 0px !important;
+    max-width: none !important;
+    overflow-x: hidden !important;
+}
