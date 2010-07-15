@@ -42,8 +42,6 @@ window.addEventListener("load", startup, false);
 			
 			item = statusbar.ownerDocument.getElementById(value);
 			
-			
-			
 			volumeselecter.selectedItem = item;
 		
 	   }
