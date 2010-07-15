@@ -122,7 +122,7 @@ window.addEventListener("load", startup, false);
 			items_list[items_count] = id;
 			items_tags[items_count] = link;
 			items_count++;
-			alert(vlc.playlist.items.count);
+			
 			//playMov(link);
 	   }
 	   
