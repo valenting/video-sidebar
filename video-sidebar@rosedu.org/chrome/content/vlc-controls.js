@@ -70,22 +70,20 @@ window.addEventListener("load", startup, false);
        function pause(){   
           vlc.playlist.togglePause();
        }
-       function c_time(){
-          return eval(vlc.input.time / 1000);
-       }
+       
 	   
        function seek(value){
 		  var vlc = document.getElementById("vlc");
           //alert(value);
 		  
-          vlc.input.time = eval(value*1000)
+          vlc.input.time = value*1000;
 		  
           //return true;
        }
 	   
        function backof(value){
           var vlc = document.getElementById("vlc");
-          vlc.input.time = vlc.input.time - eval(value*1000);
+          vlc.input.time = vlc.input.time - parseInt(value)*1000;
           //alert(vlc.input.state);
           //return true;
        }
@@ -151,12 +149,22 @@ window.addEventListener("load", startup, false);
 		  slider = document.getElementById("your_display_id");
 		  var pos =  parseInt((x * 100) / parseInt(vlc.input.length));
 		  
-		  //var p = parseInt(slider.style.left);
+		  var p = parseInt(slider.style.left);
 		  
-		  carpeLeft("your_slider_id", pos);
+		  if (p != pos){
+		    carpeLeft("your_slider_id", pos);
+			var statusbar = null;
+		    statusbar = mainWindow.document.getElementById("status-bar");
+			
+		    var statusbarseek = null;
+		    statusbarseek = statusbar.ownerDocument.getElementById("statusBarSeek");
+			
+		    statusbarseek.value = pos;
+		  }
+		  
 		  slider.value = pos;
 		  
-		  document.getElementById("nowt").innerHTML = eval(vlc.input.time/1000);
+		  document.getElementById("nowt").innerHTML = vlc.input.time/1000;
 		  
 		  var hidden = document.getElementById("length");
 		  if (hidden.value == 0)
@@ -271,7 +279,8 @@ function carpeLeft(elmnt, pos)
 		if (typeof(pos) == 'number') elmnt.style.pixelLeft = pos;
 		else pos = elmnt.style.pixelLeft;
 	}
-	return pos+1;
+	
+	return pos;
 }
 // carpeTop: Cross-browser version of "element.style.top"
 // Returns or sets the vertical position of an element.
@@ -310,8 +319,16 @@ function moveSlider(evnt)
 		var v = Math.round((sliderPos * carpeslider.scale + carpeslider.from) * // calculate display value
 			Math.pow(10, carpedisplay.decimals)) / Math.pow(10, carpedisplay.decimals);
 		carpedisplay.value = v; // put the new value in the slider display element
-		if(carpeslider==carpesliders[0])
+		if(carpeslider==carpesliders[0]){
 			vlc.input.time = v * vlc.input.length / 100;
+			var statusbar = null;
+		    statusbar = mainWindow.document.getElementById("status-bar");
+			
+		    var statusbarseek = null;
+		    statusbarseek = statusbar.ownerDocument.getElementById("statusBarSeek");
+			
+		    statusbarseek.value = v;
+		}
 		else
 			modifyvolume(v);
 		return false;
