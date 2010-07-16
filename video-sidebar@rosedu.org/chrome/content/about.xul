@@ -8,10 +8,13 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="video-sidebar" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 1.0"/>
+      <text value="&version; 0.1"/>
       <separator class="thin"/>
       <text value="&createdBy;" style="font-weight: bold;"/>
-      <text value="Valentin G."/>
+      <text value="ROSEdu.org"/>
+      <separator class="thin"/>
+	  <text value="&homepage;" style="font-weight: bold;"/>
+      <text value="https://code.google.com/p/video-sidebar/"/>
       <separator class="thin"/>
     </vbox>
   </groupbox>
