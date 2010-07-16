@@ -47,7 +47,7 @@
 			<scale id="volumeSelecter" min="-200" max="0" value = "-100" orient="vertical" onmouseup="selectVolume(this.value)" movetoclick="true" />
 		</menupopup>
 		<toolbarbutton popup="scara" image="chrome://video-sidebar/content/buttons/sound.ico"/>
-		<scale id="statusBarSeek" min="0" max="100" onmouseup="seek(this.value);" movetoclick="true"/>
+		<scale id="statusBarSeek" min="0" max="100" onchange="seek(this.value);" movetoclick="true"/>
 	</statusbarpanel>
 	</statusbar>
 

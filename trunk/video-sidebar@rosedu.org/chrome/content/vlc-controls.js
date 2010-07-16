@@ -52,7 +52,7 @@ window.addEventListener("load", startup, false);
 	   
           vlc.playlist.play();
 		  
-          intval = setInterval(uptime, 250);
+          intval = setInterval(uptime, 1000);
 		  
 		  var hidden = document.getElementById("length");
 		  
@@ -133,7 +133,7 @@ window.addEventListener("load", startup, false);
 				//alert(item);
 				if (items_tags[i]==item) {
 					vlc.playlist.playItem(items_list[i]);
-					 intval = setInterval(uptime, 250);
+					 intval = setInterval(uptime, 1000);
 					var hidden = document.getElementById("length");
 					hidden.value = 0;
 					break;
