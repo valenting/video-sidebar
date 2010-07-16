@@ -5,7 +5,8 @@
     <em:type>2</em:type>
     <em:name>Video Sidebar</em:name>
     <em:version>0.1</em:version>
-    <em:creator>ROSEdu</em:creator>
+	<em:homepageURL>https://code.google.com/p/video-sidebar/</em:homepageURL>
+    <em:creator>ROSEdu.org</em:creator>
     <em:contributor>Valentin Gosu</em:contributor>
     <em:contributor>Stefan Dascalu</em:contributor>
     <em:contributor>Andrei Burada</em:contributor>
