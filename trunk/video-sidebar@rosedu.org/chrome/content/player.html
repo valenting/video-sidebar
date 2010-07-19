@@ -29,12 +29,12 @@
 	   </td>
       </tr>
     <tr>
-      <td colspan="2"><div align="center">
-		<input type=image onclick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
+      <td colspan="2"><div align="left">
+		<input type=image onClick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
 			left:0px;
 			visibility:hidden;"/>
-		<input onclick="minimize();" type=image src="chrome://video-sidebar/content/buttons/grippy-lft.gif" id="minimize" style="position:fixed;
-			left:0px;"/>
+		<input onClick="minimize();" type=image src="chrome://video-sidebar/content/buttons/grippy-lft.gif" id="minimize" style="position:fixed;
+			left:0px;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="image" src="media/play.png" width="30" height="30" onclick='play();' value="Play" id="play" />        
         <input type="image" src="media/pause.png" width="30" height="30" onclick='pause();' value="Pause" id="pause" />        
         <input type="image" src="media/stop.png"  width="30" height="30" onclick='stop();' value="Stop" id="stop" />        
@@ -48,7 +48,7 @@
 		<!--<input type="button" onclick="getplaylist();" value="get playlist"/>-->
 		<!--<input type="button" onclick="fullscreen();" value="Fullscreen"/>-->
 		<input type="file" id="add_file" value="" />
-		<input type="button" width="30" height="30" onclick="addRowToTable();" value="Add"/>
+		<input type="button" width="30" height="30" onClick="addRowToTable();" value="Add"/>
 		<br>
 		<div class="carpe_horizontal_slider_track">
 			<div class="carpe_slider_slit">&nbsp;</div>
@@ -69,7 +69,7 @@
         valuecount="101"
         value="0"
         typelock="off" /></div>
-	<label for="your_slider_id"> Video Slider </label>
+	<label for="your_slider_id">&nbsp;&nbsp;&nbsp;&nbsp;Video Slider </label>
 		<br>
 		<br>
 		<div class="carpe_horizontal_slider_track">
@@ -91,10 +91,10 @@
         valuecount="201"
         value="100"
         typelock="off" /></div>
-		<label for="your_slider_id2"> Volume Slider </label>
+		<label for="your_slider_id2">&nbsp;&nbsp;&nbsp;&nbsp;Volume Slider </label>
 		<input id="length" type="hidden" value="" />
 		<input id="vol" type="text" style="display: none;" value="100" />
-		<input type="button" id="volbutton" onclick="modifyvolume2()" style="display: none;" value="Change It"/>
+		<input type="button" id="volbutton" onClick="modifyvolume2()" style="display: none;" value="Change It"/>
       </div></td>
       </tr>
     <tr>
@@ -102,7 +102,7 @@
         <input id="seekbutton" type="button" style="display: none;" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
         <br>
         <input id="backof" type="text" style="display: none;" size="4" value="5" />
-      <input type="button" class="sed1" style="display: none;" onclick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>
+      <input type="button" class="sed1" style="display: none;" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>
       <td width="123"><div id="nowt" style="display: none;" ></div></td>
     </tr>
     <tr>
