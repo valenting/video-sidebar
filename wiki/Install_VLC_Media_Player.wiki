@@ -6,5 +6,16 @@ This extension uses VLC Webplugin (a.k.a. Mozilla Plugin), which comes with VLC 
 
 = Windows =
 
-Go to the Videolan.org website and download the package: 
- [http://www.videolan.org/vlc/ Download]
+Go to the Videolan.org website and download the package: [http://www.videolan.org/vlc/ Download] <br>
+Open and follow the instructions. Choose to install the Mozilla Plugin during the installation. 
+
+= Debian GNU/Linux =
+
+# apt-get install vlc libdvdcss2 <br>
+# apt-get update <br>
+# apt-get install mozilla-plugin-vlc
+
+= Extra information =
+
+ [http://wiki.videolan.org/Documentation:Play_HowTo/Installing_VLC Install VLC] <br>
+ [http://www.videolan.org/doc/vlc-user-guide/en/ch07.html Install the Mozilla Plugin]
