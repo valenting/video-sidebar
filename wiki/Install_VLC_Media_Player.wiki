@@ -8,7 +8,7 @@ This is a tutorial on installing VLC Media Player along with the Mozilla Plugin.
 = Windows =
 
 Go to the Videolan.org website and download the package: [http://www.videolan.org/vlc/ Download] <br>
-Open and follow the instructions. Choose to install the Mozilla Plugin during the installation. 
+Open and follow the instructions. *Choose to install the Mozilla Plugin* during the installation. 
 
 = Debian GNU/Linux =
 
