@@ -2,7 +2,8 @@
 
 = Introduction =
 
-This extension uses VLC Webplugin (a.k.a. Mozilla Plugin), which comes with VLC Media Player. This is a tutorial on installing VLC Media Player along with the Mozilla Plugin.
+This extension uses VLC Webplugin (a.k.a. Mozilla Plugin), which comes with VLC Media Player. <br>
+This is a tutorial on installing VLC Media Player along with the Mozilla Plugin.
 
 = Windows =
 
