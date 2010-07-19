@@ -1,0 +1,10 @@
+#summary How to install VLC Media Player
+
+= Introduction =
+
+This extension uses VLC Webplugin (a.k.a. Mozilla Plugin), which comes with VLC Media Player. This is a tutorial on installing VLC Media Player along with the Mozilla Plugin.
+
+= Windows =
+
+Go to the Videolan.org website and download the package: 
+ [http://www.videolan.org/vlc/ Download]
