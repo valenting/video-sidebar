@@ -62,51 +62,16 @@ window.addEventListener("unload", shutdown, false);
 				volumeValue = sidebar.content.document.getElementById("vol");	
 				
 				var volumeButton = null;
-				volumeButton = sidebar.content.document.getElementById("volbutton");	
-				
-				var volumeDisplay = null;
-				volumeDisplay = sidebar.content.document.getElementById("your_display_id2");		
-				
-				carpeLeft("your_slider_id2",newval/2);
-				
-				volumeDisplay.value = newval;
+				volumeButton = sidebar.content.document.getElementById("volbutton");		
 				
 				volumeValue.value = newval;
 				
 				volumeButton.click();
 				
-				/*if (volumeSelecter){
-					
-					volumeSelecter.value = val;
-					volumeSelecter.focus();
-					volumeSelecter.blur();
-				}				
-				volumeSelecter.focus();*/
-				
-				
 			}
 	   }
 	   
-	    function carpeLeft(elmnt, pos)
-		{
-			var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;
-			if (!(elmnt = sidebar.content.document.getElementById(elmnt))) {
-				alert("error");
-				return 0;
-			}
-			if (elmnt.style && (typeof(elmnt.style.left) == 'string')) {
-				if (typeof(pos) == 'number') elmnt.style.left = pos + 'px';
-				else {
-					pos = parseInt(elmnt.style.left);
-					if (isNaN(pos)) pos = 0;
-				}
-			}
-			else if (elmnt.style && elmnt.style.pixelLeft) {
-				if (typeof(pos) == 'number') elmnt.style.pixelLeft = pos;
-				else pos = elmnt.style.pixelLeft;
-			}
-			return pos+1;
-		}
+	    
 	   
        function stop(){
           var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
@@ -168,6 +133,7 @@ window.addEventListener("unload", shutdown, false);
 			  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
 				//alert("this is vlc sidebar");
 				//alert(pos);
+				
 				var length = null;
 				length = sidebar.content.document.getElementById("length");
 				//alert(length.value);
