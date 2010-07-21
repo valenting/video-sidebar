@@ -22,7 +22,7 @@
 			//var statusbarseek = null;
 			
 			var button = $("#add");
-			var slider = $('<div id="slider"></div>').insertAfter(button).slider({
+			$("#seek-slider").slider({
 				min: 0,
 				max: 100,
 				range: "min",
@@ -38,15 +38,13 @@
 			//});
 		});
 		</script>
-		<style type="text/css">
-			#demo-frame > div.demo { padding: 10px !important; };
-		</style>
+		
 	</head>
 
     <body>
 	
 	
-    <div align="center" class="demo">
+    <div align="center">
     <table>
     <tr>
       <td colspan="2" align="center"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
@@ -79,7 +77,11 @@
 		<!--<input type="button" onclick="fullscreen();" value="Fullscreen"/>-->
 		<input type="file" id="add_file" value="" />
 		<input type="button" id="add" width="30" height="30" onclick="addRowToTable();" value="Add"/>
-		
+		<br>
+		<style type="text/css">
+			#demo-frame > div.demo { padding: 10px !important; };
+		</style>
+		<div class="demo" id="seek-slider"></div>
 		<!--div class="carpe_horizontal_slider_track">
 			<div class="carpe_slider_slit">&nbsp;</div>
 			<div class="carpe_slider"
