@@ -154,7 +154,7 @@ window.addEventListener("load", startup, false);
 		  
 		  //if (p != pos){
 		    //carpeLeft("your_slider_id", pos);
-			$("#slider").slider("value", pos);
+			$("#seek-slider").slider("value", pos);
 			var statusbar = null;
 		    statusbar = mainWindow.document.getElementById("status-bar");
 			
