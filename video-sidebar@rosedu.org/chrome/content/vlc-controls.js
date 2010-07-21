@@ -146,13 +146,15 @@ window.addEventListener("load", startup, false);
 	   {
 		  var x = parseInt(vlc.input.time);
 		  var slider = null;
-		  slider = document.getElementById("your_display_id");
+		  slider = document.getElementById("slider");
+			
 		  var pos =  parseInt((x * 100) / parseInt(vlc.input.length));
 		  
-		  var p = parseInt(slider.style.left);
+		  var p = $("#slider").slider("value");
 		  
-		  if (p != pos){
-		    carpeLeft("your_slider_id", pos);
+		  //if (p != pos){
+		    //carpeLeft("your_slider_id", pos);
+			$("#slider").slider("value", pos);
 			var statusbar = null;
 		    statusbar = mainWindow.document.getElementById("status-bar");
 			
@@ -160,9 +162,9 @@ window.addEventListener("load", startup, false);
 		    statusbarseek = statusbar.ownerDocument.getElementById("statusBarSeek");
 			
 		    statusbarseek.value = pos;
-		  }
+		  //}
 		  
-		  slider.value = pos;
+		  //slider.value = pos;
 		  
 		  document.getElementById("nowt").innerHTML = vlc.input.time/1000;
 		  
