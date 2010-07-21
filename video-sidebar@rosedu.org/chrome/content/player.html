@@ -9,6 +9,7 @@
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" rel="Stylesheet" />	
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+		<script type="text/javascript" src="file_chooser.js"></script>
 		<!--style type="text/css">
 			#demo-frame > div.demo { padding: 10px !important;};
 		</style-->
@@ -43,7 +44,45 @@
 			});
 		});
 		</script>
-		
+		<!-- BROWSE BUTTON-->
+		<style type="text/css">
+			.ui-button {
+				cursor: default !important;
+			}
+			body {
+				font-size: 70%;
+			}
+			#foo {
+				background-color: red;
+				width: 100px;
+				height: 100px;
+			}
+			#foo.over {
+				background-color: blue;				
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+
+				$('#foo').mouseover(function() {
+					$(this).addClass('over');
+				}).mouseout(function() {
+					$(this).removeClass('over');
+				});
+								
+				$('button').button().add('#foo, a').file().choose(function(e, input) {
+					alert("you choose: " + input.val());
+					var f=document.getElementById('add_file');
+					f.value=input.val();
+					addRowToTable();
+					//$('input.add_file').value=input.val();
+				});
+				
+								
+			});
+		</script>
+	<!--END BROWSE BUTTON-->
 	</head>
 
     <body>
@@ -80,8 +119,10 @@
 		<br/>
 		<!--<input type="button" onclick="getplaylist();" value="get playlist"/>-->
 		<!--<input type="button" onclick="fullscreen();" value="Fullscreen"/>-->
-		<input type="file" id="add_file" value="" />
-		<input type="button" id="add" width="30" height="30" onclick="addRowToTable();" value="Add"/>
+		<!--<input type="image" src="media/video.png" width="30" height="30" id="add_file" onclick='choose_file(this.id);' />-->
+		<button>Open</button>
+		<input type="hidden" id="add_file" value=""/>
+		<!--<input type="button" id="add" width="30" height="30" onclick="addRowToTable();" value="Add"/>-->
 		<br>
 		<p>
 		<div id="seek-slider"></div>
