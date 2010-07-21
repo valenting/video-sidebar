@@ -4,7 +4,7 @@ function addRowToTable()
 	var file = f.value;
 	//file = file.toLowerCase();
 	if(file == "") {
-		alert("Enter a file name or click BROWSE");
+		alert("Enter a file name or click Open");
 	}
 	else {
 	  var tbl = document.getElementById('playlist');
