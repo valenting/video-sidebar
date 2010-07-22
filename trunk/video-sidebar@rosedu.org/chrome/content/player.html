@@ -77,15 +77,14 @@
 					f.value=input.val();
 					addRowToTable();
 					//$('input.add_file').value=input.val();
-				});
-				
-								
+				});				
 			});
 		</script>
 	<!--END BROWSE BUTTON-->
 	<style type="text/css">
 	#sortable { list-style-type: none; margin: 0; padding: 0; width: 90%; }
 	#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 30px; }
+	#sortable li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
 	#sortable li span { position: absolute; margin-left: -1.3em; }
 	</style>
 	<script type="text/javascript">
@@ -93,6 +92,13 @@
 		$("#sortable").sortable();
 		$("#sortable").disableSelection();
 	});
+	// CLOSE TAB
+	$('#sortable span.ui-icon-close').live('click', function() {
+		var elem = $(this).parent().remove();
+		//alert('done');
+		//TODO Remove from VLC playlist
+	});
+				
 	</script>
 
 	</head>
