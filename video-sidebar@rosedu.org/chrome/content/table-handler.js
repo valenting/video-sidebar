@@ -14,6 +14,9 @@ function addRowToTable()
 	  el.id = 'txtRow' + file;
 	  el.setAttribute('class', 'ui-state-default');
 	  el.setAttribute('onDblclick', 'javascript:playMov("' + file.replace(/\\/g,"\\\\") + '")');
+	  var X = document.createElement('span');
+	  X.setAttribute('class', 'ui-icon ui-icon-close');
+	  el.appendChild(X);
 	  //el.setAttribute('onclick', );
 	  //el.size = 40;
 	  var textLink = document.createTextNode(file);
