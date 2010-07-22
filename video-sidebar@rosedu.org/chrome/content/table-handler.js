@@ -7,36 +7,25 @@ function addRowToTable()
 		alert("Enter a file name or click Open");
 	}
 	else {
-	  var tbl = document.getElementById('playlist');
-	  var lastRow = tbl.rows.length;
-	  // if there's no header row in the table, then iteration = lastRow + 1
-	  var iteration = lastRow;
-	  var row = tbl.insertRow(lastRow);
-	  
-	  // left cell
-	  var cellLeft = row.insertCell(0);
-	  //var textNode = document.createTextNode(iteration);
-	  var textNode = document.createTextNode(iteration);
-	  cellLeft.appendChild(textNode);
-	  
-	  // right cell
-	  var cellRight = row.insertCell(1);
-	  var el = document.createElement('a');
+	  var tbl = document.getElementById('sortable');
+	  var el = document.createElement('li');
 	  //el.type = 'text';
 	  //el.name = 'txtRow' + iteration;
-	  el.id = 'txtRow' + iteration;
-	  el.setAttribute('href', 'javascript:playMov("' + file.replace(/\\/g,"\\\\") + '")');
+	  el.id = 'txtRow' + file;
+	  el.setAttribute('class', 'ui-state-default');
+	  el.setAttribute('onDblclick', 'javascript:playMov("' + file.replace(/\\/g,"\\\\") + '")');
 	  //el.setAttribute('onclick', );
 	  //el.size = 40;
 	  var textLink = document.createTextNode(file);
 	  el.appendChild(textLink);
 	  
 	  //el.onkeypress = keyPressTest;
-	  cellRight.appendChild(el);
+	  tbl.appendChild(el);
 	  f.value='';
 	  addToPlaylist(file);
 	}
 }
+
 function keyPressTest(e, obj)
 {
   var validateChkb = document.getElementById('chkValidateOnKeyPress');
