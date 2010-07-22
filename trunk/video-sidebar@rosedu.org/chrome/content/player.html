@@ -71,8 +71,8 @@
 					$(this).removeClass('over');
 				});
 								
-				$('button').button().add('#foo, a').file().choose(function(e, input) {
-					alert("you choose: " + input.val());
+				$('button').button().add('#foo').file().choose(function(e, input) {
+					//alert("you choose: " + input.val());
 					var f=document.getElementById('add_file');
 					f.value=input.val();
 					addRowToTable();
