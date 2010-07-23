@@ -3,16 +3,12 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 		<title>VLC Embed</title>
-		<!--<style type="text/css" src=""></style>-->
 		<script type="text/javascript" src="table-handler.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css" />
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" rel="Stylesheet" />	
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
 		<script type="text/javascript" src="file_chooser.js"></script>
-		<!--style type="text/css">
-			#demo-frame > div.demo { padding: 10px !important;};
-		</style-->
 		<script type="text/javascript" src="vlc-controls.js"></script>
 		<link
 		href="default.css"
@@ -71,7 +67,7 @@
 					$(this).removeClass('over');
 				});
 								
-				$('button').button().add('#foo').file().choose(function(e, input) {
+				$('button1').button().add('#foo').file().choose(function(e, input) {
 					//alert("you choose: " + input.val());
 					var f=document.getElementById('add_file');
 					f.value=input.val();
@@ -95,7 +91,7 @@
 	$('#sortable span.ui-icon-close').live('click', function() {
 		var elem = $(this).parent().remove();
 		//alert('done');
-		//TODO Remove from VLC playlist
+		//TODO Also Remove from VLC playlist
 	});
 				
 	</script>
@@ -106,7 +102,7 @@
 	
 	
     <div align="center">
-    <table width="76%">
+    <table>
     <tr>
       <td align="center"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
         width="300"
@@ -119,7 +115,7 @@
       </tr>
     <tr>
       <td width="752"> <div align="center">
-	  <!--
+	  <!-- TODO: Implement this in XUL
 		<input type=image onclick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
 			left:0px;
 			visibility:hidden;"/>
@@ -130,35 +126,21 @@
         <input type="image" src="media/pause.png" width="30" height="30" onclick='pause();' value="Pause" id="pause" />        
         <input type="image" src="media/stop.png"  width="30" height="30" onclick='stop();' value="Stop" id="stop" />        
         <input type="image" src="media/mute_centered.png" width="30" height="30" onclick='mute();' value="Mute" id="mute" />
-		<!--<input type="button" onclick='createplaylist();' value="Playlist" />-->
-		<!--<input type="button" class="sed1" onClick="add_to_playlist();" size='30' value="Add" />-->
-		<!--<textarea id="txtin" rows="1" cols="32"></textarea> -->
 		<input type="image" src="media/previous.png" width="30" height="30" class="sed1" onClick="previous();" size='30' value="Prev" id="prev" />
         <input type="image" src="media/next.png" width="30" height="30" onclick='next();' value="Next" id="next" />
-		<br/>
-		<!--<input type="button" onclick="getplaylist();" value="get playlist"/>-->
-		<!--<input type="button" onclick="fullscreen();" value="Fullscreen"/>-->
-		<!--<input type="image" src="media/video.png" width="30" height="30" id="add_file" onclick='choose_file(this.id);' />-->
-		<button>Open</button>
-		<input type="hidden" id="add_file" value=""/>
-		<!--<input type="button" id="add" width="30" height="30" onclick="addRowToTable();" value="Add"/>-->
 		 <br><div id="seek-slider"></div>
 		<label for="seek-slider"> Video Slider </label>
-		<br>
-		<br>
+		<br><br>
 		<div id="volume-slider" style="width: 150px; margin-left: 0px; margin-right: auto" > </div>
 		<label for="volume-slider"> Volume Slider </label>
 		<input id="length" type="hidden" value="" />
 		<input id="vol" type="text" style="display: none;" value="100" />
 		<input type="button" id="volbutton" onClick="modifyvolume2()" style="display: none;" value="Change It"/>
+		<br><br>
+		<button1>Open</button1>
+		<input type="hidden" id="add_file" value=""/>
+		
       </div></td>
-      </tr>
-    <tr>
-      <td colspan="2"><input id="seekto" style="display: none;" type="text" size="4" value="10" />
-        <input id="seekbutton" type="button" style="display: none;" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
-        <br>
-        <input id="backof" type="text" style="display: none;" size="4" value="5" />
-      <input type="button" class="sed1" style="display: none;" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" />      <div id="nowt" style="display: none;" ></div></td>
       </tr>
     <tr>
     <td><p align="center">
@@ -168,30 +150,13 @@
     </table>
 
     </div>
-	<div class="demo" align="center">
+	<div class="demo" align="center" style="height:200px;overflow-x:hidden;overflow-y:auto;">
 	Playlist:
 	<ul id="sortable">
-	<!--
-	<li class="ui-state-default"> Item 1</li>
-	<li class="ui-state-default"> Item 2</li>
-	<li class="ui-state-default"> Item 3</li>
-	<li class="ui-state-default"> Item 4</li>
-	<li class="ui-state-default"> Item 5</li>
-	<li class="ui-state-default"> Item 6</li>
-	<li class="ui-state-default"> Item 7</li>
-	-->
-</ul>
+	
+	</ul>
 	</div>
 	<br><br><br>
-	<!--
-	<div style="height:200px;overflow-x:hidden;overflow-y:auto;">
-	<table id="playlist" style="width:100%;">
-		<tr>
-			<td align="center" colspan="2" class="header" style="">Artist - Album - Song</td>
-		</tr>
-	</table>
-	</div>
-	-->
     </body>
     </html>
 

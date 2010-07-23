@@ -110,12 +110,6 @@ window.addEventListener("load", startup, false);
 				}
        }
 	   
-       /*function createplaylist()
-       {
-                var id1 = vlc.playlist.add("file:///home/stefan/Desktop/test/test.avi");
-                var id2 = vlc.playlist.add("file:///home/stefan/Desktop/test/test2.avi");
-                vlc.playlist.playItem(id1);
-       }*/
 	   
 	   function addToPlaylist(link) {
 			var id=vlc.playlist.add('file:///'+link);
