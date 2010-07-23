@@ -128,19 +128,51 @@
         <input type="image" src="media/mute_centered.png" width="30" height="30" onclick='mute();' value="Mute" id="mute" />
 		<input type="image" src="media/previous.png" width="30" height="30" class="sed1" onClick="previous();" size='30' value="Prev" id="prev" />
         <input type="image" src="media/next.png" width="30" height="30" onclick='next();' value="Next" id="next" />
+<<<<<<< .mine
+		<!--<input type="button" onclick="getplaylist();" value="get playlist"/>-->
+		<!--<input type="button" onclick="fullscreen();" value="Fullscreen"/>-->
+		<!--<input type="image" src="media/video.png" width="30" height="30" id="add_file" onclick='choose_file(this.id);' />-->
+		<!--<input type="button" id="add" width="30" height="30" onclick="addRowToTable();" value="Add"/>-->
+		<br>
+		<p>
+		<div id="seek-slider"></div>
+		<label for="seek-slider"> Seek </label>
+		<br>
+		<br>
+		<div id="volume-slider" style="width: 150px;" > </div>
+		<label for="volume-slider"> Volume Slider </label>
+=======
 		 <br><div id="seek-slider"></div>
 		<label for="seek-slider"> Seek bar </label>
 		<br><br>
 		<div id="volume-slider" style="width: 150px; margin-left: 0px; margin-right: auto" >  </div>
 		<label for="volume-slider"> Volume </label>
+>>>>>>> .r99
 		<input id="length" type="hidden" value="" />
 		<input id="vol" type="text" style="display: none;" value="100" />
 		<input type="button" id="volbutton" onClick="modifyvolume2()" style="display: none;" value="Change It"/>
 		<br><br>
 		<button1>Open</button1>
 		<input type="hidden" id="add_file" value=""/>
+		<br><br>
+		<button>Open</button>
+		<input type="hidden" id="add_file" value=""/>
+		
       </div></td>
+<<<<<<< .mine
+      </tr>
+    <tr>
+	<!-- needed for XUL seekbar -->
+      <td width="163"><input id="seekto" style="display: none;" type="text" size="4" value="10" />
+        <input id="seekbutton" type="button" style="display: none;" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
+        <br>
+        <input id="backof" type="text" style="display: none;" size="4" value="5" />
+      <input type="button" class="sed1" style="display: none;" onclick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>
+      <td width="123"><div id="nowt" style="display: none;" ></div></td>
+    </tr>
+=======
       </tr> 
+>>>>>>> .r99
     </table>
 
     </div>
