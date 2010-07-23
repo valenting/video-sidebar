@@ -19,7 +19,8 @@ function addRowToTable()
 	  el.appendChild(X);
 	  //el.setAttribute('onclick', );
 	  //el.size = 40;
-	  var textLink = document.createTextNode(file);
+	  var filename = file.split('\\').pop().split('/').pop();
+	  var textLink = document.createTextNode(filename.substr(0,25));
 	  el.appendChild(textLink);
 	  
 	  //el.onkeypress = keyPressTest;
