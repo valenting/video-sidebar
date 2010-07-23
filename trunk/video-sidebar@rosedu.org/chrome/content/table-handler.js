@@ -9,8 +9,6 @@ function addRowToTable()
 	else {
 	  var tbl = document.getElementById('sortable');
 	  var el = document.createElement('li');
-	  //el.type = 'text';
-	  //el.name = 'txtRow' + iteration;
 	  el.id = 'txtRow' + file;
 	  el.setAttribute('class', 'ui-state-default');
 	  el.setAttribute('onDblclick', 'javascript:playMov("' + file.replace(/\\/g,"\\\\") + '")');
@@ -20,7 +18,9 @@ function addRowToTable()
 	  //el.setAttribute('onclick', );
 	  //el.size = 40;
 	  var filename = file.split('\\').pop().split('/').pop();
-	  var textLink = document.createTextNode(filename.substr(0,25));
+	  if (filename.length>30)
+		filename = filename.substr(0,28)+'...';
+	  var textLink = document.createTextNode(filename);
 	  el.appendChild(textLink);
 	  
 	  //el.onkeypress = keyPressTest;
