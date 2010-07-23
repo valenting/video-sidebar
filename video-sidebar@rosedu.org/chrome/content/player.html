@@ -84,8 +84,7 @@
 	<style type="text/css">
 	#sortable { list-style-type: none; margin: 0; padding: 0; width: 90%; }
 	#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 30px; }
-	#sortable li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
-	#sortable li span { position: absolute; margin-left: -1.3em; }
+	#sortable li .ui-icon-close { float: right; margin: 0.4em 0.2em 0 0; cursor: pointer; }
 	</style>
 	<script type="text/javascript">
 	$(function() {
@@ -107,9 +106,9 @@
 	
 	
     <div align="center">
-    <table>
+    <table width="76%">
     <tr>
-      <td colspan="2" align="center"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
+      <td align="center"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
         width="300"
         height="240"
        autoplay="yes"
@@ -119,7 +118,7 @@
 	   </td>
       </tr>
     <tr>
-      <td colspan="2"><div align="center">
+      <td width="752"> <div align="center">
 	  <!--
 		<input type=image onclick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
 			left:0px;
@@ -143,9 +142,7 @@
 		<button>Open</button>
 		<input type="hidden" id="add_file" value=""/>
 		<!--<input type="button" id="add" width="30" height="30" onclick="addRowToTable();" value="Add"/>-->
-		<br>
-		<p>
-		<div id="seek-slider"></div>
+		 <br><div id="seek-slider"></div>
 		<label for="seek-slider"> Video Slider </label>
 		<br>
 		<br>
@@ -153,19 +150,18 @@
 		<label for="volume-slider"> Volume Slider </label>
 		<input id="length" type="hidden" value="" />
 		<input id="vol" type="text" style="display: none;" value="100" />
-		<input type="button" id="volbutton" onclick="modifyvolume2()" style="display: none;" value="Change It"/>
+		<input type="button" id="volbutton" onClick="modifyvolume2()" style="display: none;" value="Change It"/>
       </div></td>
       </tr>
     <tr>
-      <td width="163"><input id="seekto" style="display: none;" type="text" size="4" value="10" />
+      <td colspan="2"><input id="seekto" style="display: none;" type="text" size="4" value="10" />
         <input id="seekbutton" type="button" style="display: none;" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
         <br>
         <input id="backof" type="text" style="display: none;" size="4" value="5" />
-      <input type="button" class="sed1" style="display: none;" onclick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" /></td>
-      <td width="123"><div id="nowt" style="display: none;" ></div></td>
-    </tr>
+      <input type="button" class="sed1" style="display: none;" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" />      <div id="nowt" style="display: none;" ></div></td>
+      </tr>
     <tr>
-    <td colspan="2"><p align="center">
+    <td><p align="center">
         <br>
     </p></td>
     </tr>
