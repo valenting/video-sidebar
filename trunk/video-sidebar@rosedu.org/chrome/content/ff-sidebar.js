@@ -1,7 +1,5 @@
 var mainWindow = null;
 
-var vlc = null;
-
 function startup() {
   mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                      .getInterface(Components.interfaces.nsIWebNavigation)
@@ -34,15 +32,14 @@ window.addEventListener("unload", shutdown, false);
 	   
 	   
        function play(){
-		  var sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
+		  var sidebar = null;
+		  sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
-			//alert("this is vlc sidebar");
+			alert("this is vlc sidebar");
 			
+			var playbutton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("play");
+			alert( mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.location.href);
 			
-			if (vlc == null){
-				vlc = sidebar.content.document.getElementById("vlc");
-			}
-			playbutton = sidebar.content.document.getElementById("play");
 			playbutton.click();
 			
 		  }
@@ -54,15 +51,11 @@ window.addEventListener("unload", shutdown, false);
 			
 			if(sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul")
 			{
-				if(vlc == null)
-				{
-					vlc = sidebar.content.document.getElementById("vlc");
-				}
 				var volumeValue = null;
-				volumeValue = sidebar.content.document.getElementById("vol");	
+				volumeValue = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("vol");	
 				
 				var volumeButton = null;
-				volumeButton = sidebar.content.document.getElementById("volbutton");		
+				volumeButton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("volbutton");		
 				
 				volumeValue.value = newval;
 				
@@ -78,10 +71,8 @@ window.addEventListener("unload", shutdown, false);
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
 			//alert("this is vlc sidebar");
 			
-			if (vlc == null){
-				vlc = sidebar.content.document.getElementById("vlc");
-			}
-				stopbutton = sidebar.content.document.getElementById("stop");
+			
+				stopbutton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("stop");
 				stopbutton.click();
 			
 		  }
@@ -91,10 +82,8 @@ window.addEventListener("unload", shutdown, false);
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
 			//alert("this is vlc sidebar");
 			
-			if (vlc == null){
-				vlc = sidebar.content.document.getElementById("vlc");
-			}
-				pausebutton = sidebar.content.document.getElementById("pause");
+			
+				pausebutton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("pause");
 				pausebutton.click();
 			
 		  }
@@ -105,10 +94,8 @@ window.addEventListener("unload", shutdown, false);
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
 			//alert("this is vlc sidebar");
 			
-			if (vlc == null){
-				vlc = sidebar.content.document.getElementById("vlc");
-			}
-				nextbutton = sidebar.content.document.getElementById("next");
+			
+				nextbutton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("next");
 				nextbutton.click();
 			
 		  }
@@ -119,10 +106,8 @@ window.addEventListener("unload", shutdown, false);
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
 			//alert("this is vlc sidebar");
 			
-			if (vlc == null){
-				vlc = sidebar.content.document.getElementById("vlc");
-			}
-				prevbutton = sidebar.content.document.getElementById("prev");
+			
+				prevbutton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("prev");
 				prevbutton.click();
 			
 		  }
@@ -135,13 +120,13 @@ window.addEventListener("unload", shutdown, false);
 				//alert(pos);
 				
 				var length = null;
-				length = sidebar.content.document.getElementById("length");
+				length = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("length");
 				//alert(length.value);
 				
 				var seekto = null;
-				seekto = sidebar.content.document.getElementById("seekbutton");
+				seekto = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("seekbutton");
 				
-				var seektext = sidebar.content.document.getElementById("seekto");
+				var seektext = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("seekto");
 				
 				var x = (parseInt(pos) * parseInt(length.value)) / 100;
 				seektext.value = x;
