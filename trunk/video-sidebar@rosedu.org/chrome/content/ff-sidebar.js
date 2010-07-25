@@ -23,7 +23,7 @@ window.addEventListener("unload", shutdown, false);
 
 	   
 	   function alert_me(){
-			alert("Play!");
+			//alert("Play!");
 		}
 	   
        function mute(){
@@ -35,10 +35,10 @@ window.addEventListener("unload", shutdown, false);
 		  var sidebar = null;
 		  sidebar = mainWindow.document.getElementById("sidebar").contentWindow;		
 		  if (sidebar.location.href == "chrome://video-sidebar/content/ff-sidebar.xul") {
-			alert("this is vlc sidebar");
+			//alert("this is vlc sidebar");
 			
 			var playbutton = mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.getElementById("play");
-			alert( mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.location.href);
+			//alert( mainWindow.document.getElementById("sidebar").contentDocument.getElementById("sidebar_browser").contentDocument.location.href);
 			
 			playbutton.click();
 			
