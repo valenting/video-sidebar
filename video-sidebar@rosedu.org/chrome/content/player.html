@@ -44,12 +44,27 @@
 		<!-- BROWSE BUTTON-->
 		<style type="text/css">
 			.ui-button {
-				cursor: default !important;
-				line-height:inherit;
-				outline-width:inherit;
-				
+				cursor: default !important;		
 			}
-			
+		</style>
+		<style>
+	
+			.tooltip {
+				display:none;
+				background-color:#ffa;
+				border:1px solid #cc9;
+				padding:3px;
+				font-size:13px;
+				-moz-box-shadow: 2px 2px 11px #666;
+				-webkit-box-shadow: 2px 2px 11px #666;
+			}
+
+			/* style the trigger elements */
+			#triggers img {
+				border:0;
+				cursor:pointer;
+				margin-left:11px;
+			}
 		</style>
 
 		<script type="text/javascript">
@@ -57,7 +72,7 @@
 				$('#open').button({
 					text: false,
 					icons: {	
-						primary: 'ui-icon-eject'
+						primary: 'ui-icon-folder-open'
 					}
 				}).file().choose(function(e, input) {
 					//alert("you choose: " + input.val());
@@ -176,7 +191,7 @@
 	   </td>
       </tr>
     <tr>
-      <td width="752"> <div align="center">
+      <td width="752"> <div align="center" valign="middle">
 	  <!-- TODO: Implement this in XUL
 		<input type=image onclick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
 			left:0px;
@@ -186,7 +201,7 @@
         -->
 		
 		<table>
-		<tr><td><span id="toolbar" class="ui-widget-header ui-corner-all" height="20px">
+		<tr><td><span id="toolbar" class="ui-widget-header ui-corner-all"	>
 				<button id="play">play</button>
 				<button id="pause">pause</button>
 				<button id="stop">stop</button>
@@ -196,7 +211,7 @@
 				<label for="mute">Mute</label>
 				<button id="open">open</button>
 			</span></td><td rowspan="2">
-		<div id="volume-slider" >  </div></td></tr>
+		<div id="volume-slider" ></div></td></tr>
 		<tr><td valign="top"><div id="seek-slider"></div></td></tr>
 		</table>
 		<input id="length" type="hidden" value="" />
