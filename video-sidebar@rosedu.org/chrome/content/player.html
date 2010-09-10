@@ -3,22 +3,20 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 		<title>VLC Embed</title>
+		
 		<script type="text/javascript" src="table-handler.js"></script>
-		<link href="style.css" rel="stylesheet" type="text/css" />
+		<!--<link href="style.css" rel="stylesheet" type="text/css" /> -->
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" rel="Stylesheet" />	
+        <link type="text/css" href="css/demos.css" rel="Stylesheet" />
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
 		<script type="text/javascript" src="file_chooser.js"></script>
 		<script type="text/javascript" src="vlc-controls.js"></script>
-		<link
-		href="default.css"
-		rel="stylesheet"
-		type="text/css" />
+		
 		<script type="text/javascript">
 		$(function() {
 			var vlc = null;
 			vlc = document.getElementById("vlc");
-			var button = $("#add");
 			$("#seek-slider").slider({
 				min: 0,
 				max: 100,
@@ -30,6 +28,8 @@
 				}
 			});
 			$("#volume-slider").slider({
+				orientation: "vertical",
+				width: 20,
 				min: 0,
 				max: 200,
 				range: "min",
@@ -40,34 +40,26 @@
 			});
 		});
 		</script>
+        
 		<!-- BROWSE BUTTON-->
 		<style type="text/css">
 			.ui-button {
 				cursor: default !important;
+				line-height:inherit;
+				outline-width:inherit;
+				
 			}
-			body {
-				font-size: 70%;
-			}
-			#foo {
-				background-color: red;
-				width: 100px;
-				height: 100px;
-			}
-			#foo.over {
-				background-color: blue;				
-			}
+			
 		</style>
 
 		<script type="text/javascript">
 			$(function() {
-
-				$('#foo').mouseover(function() {
-					$(this).addClass('over');
-				}).mouseout(function() {
-					$(this).removeClass('over');
-				});
-								
-				$('button1').button().add('#foo').file().choose(function(e, input) {
+				$('#open').button({
+					text: false,
+					icons: {	
+						primary: 'ui-icon-eject'
+					}
+				}).file().choose(function(e, input) {
 					//alert("you choose: " + input.val());
 					var f=document.getElementById('add_file');
 					f.value=input.val();
@@ -76,6 +68,76 @@
 				});				
 			});
 		</script>
+		<style type="text/css">
+	#toolbar {
+		padding: 10px 4px;
+	}
+	</style>
+	<script type="text/javascript">
+	$(function() {
+		//$('#toolbar').buttonset();
+		// PLAY
+		$('#play').button({
+			text: false,
+			icons: {	
+				primary: 'ui-icon-play'
+			}
+		})
+		.click(function() {
+			play();
+		});
+		//PAUSE
+		$('#pause').button({
+			text: false,
+			icons: {
+				primary: 'ui-icon-pause'
+			}
+		})
+		.click(function() {
+			pause();
+		});
+		//STOP
+		$('#stop').button({
+			text: false,
+			icons: {
+				primary: 'ui-icon-stop'
+			}
+		})
+		.click(function() {
+			stop();
+		});
+		// PREV
+		$('#prev').button({	
+			text: false,
+			icons: {
+				primary: 'ui-icon-seek-start'
+			}
+			
+		}).click(function() {
+			previous();
+		});
+		// NEXT
+		$('#next').button({
+			text: false,
+			icons: {
+				primary: 'ui-icon-seek-end'
+			}
+		}).click(function() {
+			next();
+		});
+		// MUTE
+		$("#mute").button({
+			text: false,
+			icons: {
+				primary: 'ui-icon-volume-off'
+			}
+		}).click(function(){
+			mute();
+		});
+		
+	});
+	</script>
+
 	<!--END BROWSE BUTTON-->
 	<style type="text/css">
 	#sortable { list-style-type: none; margin: 0; padding: 0; width: 90%; }
@@ -122,23 +184,25 @@
 		<input onclick="minimize();" type=image src="chrome://video-sidebar/content/buttons/grippy-lft.gif" id="minimize" style="position:fixed;
 			left:0px;"/>
         -->
-		<input type="image" src="media/play.png" width="30" height="30" onclick='play();' value="Play" id="play" />        
-        <input type="image" src="media/pause.png" width="30" height="30" onclick='pause();' value="Pause" id="pause" />        
-        <input type="image" src="media/stop.png"  width="30" height="30" onclick='stop();' value="Stop" id="stop" />        
-        <input type="image" src="media/mute_centered.png" width="30" height="30" onclick='mute();' value="Mute" id="mute" />
-		<input type="image" src="media/previous.png" width="30" height="30" class="sed1" onClick="previous();" size='30' value="Prev" id="prev" />
-        <input type="image" src="media/next.png" width="30" height="30" onclick='next();' value="Next" id="next" />
-		 <br><div id="seek-slider"></div>
-		<label for="seek-slider"> Seek bar </label>
-		<br><br>
-		<div id="volume-slider" style="width: 150px;" >  </div>
-		<label for="volume-slider"> Volume </label>
-		<input id="length" type="hidden" value="" />
 		
+		<table>
+		<tr><td><span id="toolbar" class="ui-widget-header ui-corner-all" height="20px">
+				<button id="play">play</button>
+				<button id="pause">pause</button>
+				<button id="stop">stop</button>
+				<button id="prev">prev</button>
+				<button id="next">next</button>
+				<input type="checkbox" id="mute" />
+				<label for="mute">Mute</label>
+				<button id="open">open</button>
+			</span></td><td rowspan="2">
+		<div id="volume-slider" >  </div></td></tr>
+		<tr><td valign="top"><div id="seek-slider"></div></td></tr>
+		</table>
+		<input id="length" type="hidden" value="" />
 		<input id="vol" type="text" style="display: none;" value="100" />
 		<input type="button" id="volbutton" onClick="modifyvolume2()" style="display: none;" value="Change It"/>
-		<br><br>
-		<button1>Open</button1>
+		
 		<input type="hidden" id="add_file" value=""/>
       </div></td>
       </tr>
