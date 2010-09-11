@@ -16,7 +16,11 @@ function shutdown() {
   // Sidebar is unloading
 }
 
-
+function setSidebarWidth(newwidth) {
+  window.top.document.getElementById("sidebar-box").width=newwidth;
+}
+setSidebarWidth(340);
+	
 window.addEventListener("load", startup, false);
 window.addEventListener("unload", shutdown, false);
 
