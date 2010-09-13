@@ -5,10 +5,10 @@
 		<title>VLC Embed</title>
 		
 		<script type="text/javascript" src="table-handler.js"></script>
-		<!--<link href="style.css" rel="stylesheet" type="text/css" /> -->
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" rel="Stylesheet" />	
         <link type="text/css" href="css/demos.css" rel="Stylesheet" />
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
 		<script type="text/javascript" src="file_chooser.js"></script>
 		<script type="text/javascript" src="vlc-controls.js"></script>
@@ -24,7 +24,6 @@
 				value: 0,
 				slide: function(event, ui) {
 					vlc.input.time = ui.value * vlc.input.length / 100;
-					
 				}
 			});
 			$("#volume-slider").slider({
@@ -47,25 +46,6 @@
 				cursor: default !important;		
 			}
 		</style>
-		<style>
-	
-			.tooltip {
-				display:none;
-				background-color:#ffa;
-				border:1px solid #cc9;
-				padding:3px;
-				font-size:13px;
-				-moz-box-shadow: 2px 2px 11px #666;
-				-webkit-box-shadow: 2px 2px 11px #666;
-			}
-
-			/* style the trigger elements */
-			#triggers img {
-				border:0;
-				cursor:pointer;
-				margin-left:11px;
-			}
-		</style>
 
 		<script type="text/javascript">
 			$(function() {
@@ -75,11 +55,9 @@
 						primary: 'ui-icon-folder-open'
 					}
 				}).file().choose(function(e, input) {
-					//alert("you choose: " + input.val());
 					var f=document.getElementById('add_file');
 					f.value=input.val();
 					addRowToTable();
-					//$('input.add_file').value=input.val();
 				});				
 			});
 		</script>
@@ -90,7 +68,6 @@
 	</style>
 	<script type="text/javascript">
 	$(function() {
-		//$('#toolbar').buttonset();
 		// PLAY
 		$('#play').button({
 			text: false,
@@ -178,7 +155,7 @@
     <body>
 	
 	
-    <div align="center">
+    <div style="width:auto;overflow-x:hidden">
     <table>
     <tr>
       <td align="center"><embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
@@ -191,7 +168,7 @@
 	   </td>
       </tr>
     <tr>
-      <td width="752"> <div align="center" valign="middle">
+      <td> <div align="center" valign="middle">
 	  <!-- TODO: Implement this in XUL
 		<input type=image onclick="maximize();" src="chrome://video-sidebar/content/buttons/grippy-rgt.gif" id="maximize" style="position:fixed;
 			left:0px;
@@ -210,8 +187,8 @@
 				<input type="checkbox" id="mute" />
 				<label for="mute">Mute</label>
 				<button id="open">open</button>
-			</span></td><td rowspan="2">
-		<div id="volume-slider" ></div></td></tr>
+			</span></td><td rowspan="2" width="25" align="right">
+<div id="volume-slider" ></div></td></tr>
 		<tr><td valign="top"><div id="seek-slider"></div></td></tr>
 		</table>
 		<input id="length" type="hidden" value="" />
@@ -221,22 +198,25 @@
 		<input type="hidden" id="add_file" value=""/>
       </div></td>
       </tr>
-		<tr>
-      <td colspan="2"><input id="seekto" style="display: none;" type="text" size="4" value="10" />
+	  <tr><td align="center">
+	  
+	  
+	  <input id="seekto" style="display: none;" type="text" size="4" value="10" />
         <input id="seekbutton" type="button" style="display: none;" class="sed1" onClick="seek(document.getElementById('seekto').value);" size='30' value="Seek (sec)" />
         <input id="backof" type="text" style="display: none;" size="4" value="5" />
-      <input type="button" class="sed1" style="display: none;" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" />      <div id="nowt" style="display: none;" ></div></td>
-      </tr>
-
-    </table>
-
-    </div>
-	<div class="demo" align="center" style="height:200px;overflow-x:hidden;overflow-y:auto;">
+      <input type="button" class="sed1" style="display: none;" onClick="backof(document.getElementById('backof').value);" size='30' value="Back of (sec)" />      <div id="nowt" style="display: none;" ></div>
+    <div class="demo" align="center" style="height:200px;overflow-x:hidden;overflow-y:auto;width:300px">
 	<h3>Playlist:</h3>
 	<ul id="sortable">
 	
 	</ul>
 	</div>
+	  
+	  
+	  </td><tr>
+    </table>
+	</div>
+	
     </body>
     </html>
 
