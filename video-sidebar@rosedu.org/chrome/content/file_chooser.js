@@ -98,7 +98,7 @@ function addRowToTable()
 	  //el.size = 40;
 	  var filename = file.split('\\').pop().split('/').pop();
 	  if (filename.length>30)
-		filename = filename.substr(0,28)+'...';
+		filename = filename.substr(0,24)+'...';
 	  var textLink = document.createTextNode(filename);
 	  el.appendChild(textLink);
 	  
