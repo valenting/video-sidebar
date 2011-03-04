@@ -90,19 +90,18 @@ function addRowToTable()
 	  var el = document.createElement('li');
 	  el.id = 'txtRow' + file;
 	  el.setAttribute('class', 'ui-state-default');
-	  el.setAttribute('onDblclick', 'javascript:playMov("' + file.replace(/\\/g,"\\\\") + '")');
+	 
+	  el.addEventListener("dblclick", function () { playMov(file); }, false); // FIXED
+
 	  var X = document.createElement('span');
 	  X.setAttribute('class', 'ui-icon ui-icon-close');
 	  el.appendChild(X);
-	  //el.setAttribute('onclick', );
-	  //el.size = 40;
 	  var filename = file.split('\\').pop().split('/').pop();
 	  if (filename.length>30)
 		filename = filename.substr(0,24)+'...';
 	  var textLink = document.createTextNode(filename);
 	  el.appendChild(textLink);
 	  
-	  //el.onkeypress = keyPressTest;
 	  tbl.appendChild(el);
 	  f.value='';
 	  addToPlaylist(file);
