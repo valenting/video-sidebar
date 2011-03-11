@@ -1,4 +1,4 @@
-var video-sidebar = {
+var video__sidebar = {
   onLoad: function() {
     // initialization code
     this.initialized = true;
@@ -14,8 +14,8 @@ var video-sidebar = {
 
   onToolbarButtonCommand: function(e) {
     // just reuse the function above.  you can change this, obviously!
-    video-sidebar.onMenuItemCommand(e);
+    video__sidebar.onMenuItemCommand(e);
   }
 };
 
-window.addEventListener("load", video-sidebar.onLoad, false);
+window.addEventListener("load", video__sidebar.onLoad, false);
