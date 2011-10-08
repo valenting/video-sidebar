@@ -1,109 +1,107 @@
-jQuery.fn.choose = function(f) {
-	$(this).bind('choose', f);
+jQuery.fn.choose = function (f) {
+    $(this).bind('choose', f);
 };
 
 
-jQuery.fn.file = function() {
-	return this.each(function() {
-		var btn = $(this);
-		var pos = btn.offset();
-								
-		function update() {
-			pos = btn.offset();
-			file.css({
-				'top': pos.top,
-				'left': pos.left,
-				'width': btn.width(),
-				'height': btn.height()
-			});
-		}
+jQuery.fn.file = function () {
+    return this.each(function () {
+        var btn = $(this);
+        var pos = btn.offset();
 
-		btn.mouseover(update);
+        function update() {
+            pos = btn.offset();
+            file.css({
+                'top': pos.top,
+                'left': pos.left,
+                'width': btn.width(),
+                'height': btn.height()
+            });
+        }
 
-		var hidden = $('<div></div>').css({
-			'display': 'none'
-		}).appendTo('body');
+        btn.mouseover(update);
 
-		var file = $('<div><form></form></div>').appendTo('body').css({
-			'position': 'absolute',
-			'overflow': 'hidden',
-			'-moz-opacity': '0',
-			'filter':  'alpha(opacity: 0)',
-			'opacity': '0',
-			'z-index': '2'		
-		});
+        var hidden = $('<div></div>').css({
+            'display': 'none'
+        }).appendTo('body');
 
-		var form = file.find('form');
-		var input = form.find('input');
-		
-		function reset() {
-			var input = $('<input type="file" multiple>').appendTo(form);
-			input.change(function(e) {
-				input.unbind();
-				input.detach();
-				btn.trigger('choose', [input]);
-				reset();
-			});
-		};
-		
-		reset();
+        var file = $('<div><form></form></div>').appendTo('body').css({
+            'position': 'absolute',
+            'overflow': 'hidden',
+            '-moz-opacity': '0',
+            'filter': 'alpha(opacity: 0)',
+            'opacity': '0',
+            'z-index': '2'
+        });
 
-		function placer(e) {
-			form.css('margin-left', e.pageX - pos.left - offset.width);
-			form.css('margin-top', e.pageY - pos.top - offset.height + 3);					
-		}
+        var form = file.find('form');
+        var input = form.find('input');
 
-		function redirect(name) {
-			file[name](function(e) {
-				btn.trigger(name);
-			});
-		}
+        function reset() {
+            var input = $('<input type="file" multiple>').appendTo(form);
+            input.change(function (e) {
+                input.unbind();
+                input.detach();
+                btn.trigger('choose', [input]);
+                reset();
+            });
+        };
 
-		file.mousemove(placer);
-		btn.mousemove(placer);
+        reset();
 
-		redirect('mouseover');
-		redirect('mouseout');
-		redirect('mousedown');
-		redirect('mouseup');
+        function placer(e) {
+            form.css('margin-left', e.pageX - pos.left - offset.width);
+            form.css('margin-top', e.pageY - pos.top - offset.height + 3);
+        }
 
-		var offset = {
-			width: file.width() - 25,
-			height: file.height() / 2
-		};
+        function redirect(name) {
+            file[name](function (e) {
+                btn.trigger(name);
+            });
+        }
 
-		update();
-	});
+        file.mousemove(placer);
+        btn.mousemove(placer);
+
+        redirect('mouseover');
+        redirect('mouseout');
+        redirect('mousedown');
+        redirect('mouseup');
+
+        var offset = {
+            width: file.width() - 25,
+            height: file.height() / 2
+        };
+
+        update();
+    });
 };
 
 
-function addRowToTable()
-{
-	var f=document.getElementById('add_file');
-	var file = f.value;
-	//file = file.toLowerCase();
-	if(file == "") {
-		alert("Enter a file name or click Open");
-	}
-	else {
-	  var tbl = document.getElementById('sortable');
-	  var el = document.createElement('li');
-	  el.id = 'txtRow' + file;
-	  el.setAttribute('class', 'ui-state-default');
-	 
-	  el.addEventListener("dblclick", function () { playMov(file); }, false); // FIXED
+function addRowToTable() {
+    var f = document.getElementById('add_file');
+    var file = f.value;
+    //file = file.toLowerCase();
+    if (file == "") {
+        alert("Enter a file name or click Open");
+    } else {
+        var tbl = document.getElementById('sortable');
+        var el = document.createElement('li');
+        el.id = 'txtRow' + file;
+        el.setAttribute('class', 'ui-state-default');
 
-	  var X = document.createElement('span');
-	  X.setAttribute('class', 'ui-icon ui-icon-close');
-	  el.appendChild(X);
-	  var filename = file.split('\\').pop().split('/').pop();
-	  if (filename.length>30)
-		filename = filename.substr(0,24)+'...';
-	  var textLink = document.createTextNode(filename);
-	  el.appendChild(textLink);
-	  
-	  tbl.appendChild(el);
-	  f.value='';
-	  addToPlaylist(file);
-	}
+        el.addEventListener("dblclick", function () {
+            playMov(file);
+        }, false); // FIXED
+        var X = document.createElement('span');
+        X.setAttribute('class', 'ui-icon ui-icon-close');
+        el.appendChild(X);
+        var filename = file.split('\\').pop().split('/').pop();
+        if (filename.length > 30) filename = filename.substr(0, 24) + '...';
+        var textLink = document.createTextNode(filename);
+        el.appendChild(textLink);
+
+        tbl.appendChild(el);
+        f.value = '';
+        addToPlaylist(file);
+    }
 }
