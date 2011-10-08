@@ -1,6 +1,6 @@
 video__sidebar.onFirefoxLoad = function(event) {
   document.getElementById("contentAreaContextMenu")
-          .addEventListener("popupshowing", function (e){ video-sidebar.showFirefoxContextMenu(e); }, false);
+          .addEventListener("popupshowing", function (e){ video__sidebar.showFirefoxContextMenu(e); }, false);
 };
 
 video__sidebar.showFirefoxContextMenu = function(event) {
@@ -8,4 +8,4 @@ video__sidebar.showFirefoxContextMenu = function(event) {
   document.getElementById("context-video-sidebar").hidden = gContextMenu.onImage;
 };
 
-window.addEventListener("load", video-sidebar.onFirefoxLoad, false);
+window.addEventListener("load", video__sidebar.onFirefoxLoad, false);
